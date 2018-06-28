@@ -42,6 +42,7 @@ mkdir -p basic
 
 echo "node_modules" >> basic/.gitignore
 echo "dist" >> basic/.gitignore
+echo ".cache" >> basic/.gitignore
 echo '{"scripts":{"start":"parcel src/","build":"parcel build src/index.html"}}' > basic/package.json
 
 cd basic/
@@ -99,7 +100,7 @@ serve dist/
 
 open http://localhost:5000/
 
-=== babel-stage-0
+=== babel stage-0
 
 parcel needed only .babelrc file and installed required presets
 
@@ -148,6 +149,36 @@ build, run, verify...
 
 done.
 
+=== preact
+
+.do necessary updates from react example:
+[source,bash]
+----
+cp -Rf react preact
+cd preact/
+
+npm rm react react-dom babel-preset-react
+
+npm i -S preact preact-compat
+npm i -D babel-preset-preact babel-plugin-transform-class-properties
+
+echo '{"presets":["env","preact"],"plugins":["transform-class-properties"]}' > .babelrc
+----
+
+.implement preact component:
+[source,javascript]
+----
+include::../preact/src/components/echo-ehlo.js[]
+----
+
+.update entry point:
+[source,javascript]
+----
+include::../preact/src/main.js[]
+----
+
+done.
+
 === vue
 
 .to be able build vue apps, in addition to babel example you only need install vue and two dev packages:
@@ -158,6 +189,18 @@ cd vue/
 npm i -s vue
 npm i -D babel-preset-vue @vue/component-compiler-utils vue-template-compiler
 echo '{"presets":["env","vue"]}' > .babelrc
+----
+
+.add vue component file: `App.vue`
+[source,html]
+----
+include::../vue/src/components/App.vue[]
+----
+
+.main.js
+[source,javascript]
+----
+include::../vue/src/main.js[]
 ----
 
 == Links
