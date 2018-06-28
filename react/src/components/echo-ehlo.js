@@ -4,7 +4,7 @@ export class EchoEhlo extends Component {
   constructor() {
     super();
     this.state = {
-      message: 'hello',
+      message: 'Hey!',
     };
     this.toggle = this.toggle.bind(this);
   }
@@ -15,7 +15,7 @@ export class EchoEhlo extends Component {
   }
   render() {
     return <h1 onClick={this.toggle}>
-      {this.state.message}
+      {this.state.message} 📦 🚀
     </h1>
   }
 }

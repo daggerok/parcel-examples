@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "parcel serve src/",
+    "start": "parcel src/",
     "build": "parcel build src/index.html"
   },
   "name": "basic-app",

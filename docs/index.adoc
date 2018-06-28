@@ -42,7 +42,7 @@ mkdir -p basic
 
 echo "node_modules" >> basic/.gitignore
 echo "dist" >> basic/.gitignore
-echo '{"scripts":{"start":"parcel serve src/","build":"parcel build src/index.html"}}' > basic/package.json
+echo '{"scripts":{"start":"parcel src/","build":"parcel build src/index.html"}}' > basic/package.json
 
 cd basic/
 npm init -y
@@ -112,6 +112,12 @@ echo '{"presets":["env","stage-0"]}' > .babelrc
 npm i -D babel-preset-env babel-preset-stage-0
 ----
 
+.now you can use some cool JS features:
+[source,javascript]
+----
+include::../babel-stage-0/src/main.js[tags=content]
+----
+
 done.
 
 === react
@@ -122,6 +128,8 @@ done.
 cp -Rf babel-stage-0 react
 cd react/
 npm i -S react react-dom
+npm i -D babel-preset-react
+echo '{"presets":["env","react"]}' > .babelrc
 ----
 
 .add react component:
@@ -139,6 +147,18 @@ include::../react/src/main.js[]
 build, run, verify...
 
 done.
+
+=== vue
+
+.to be able build vue apps, in addition to babel example you only need install vue and two dev packages:
+[source,bash]
+----
+cp -Rf babel-stage-0 vue
+cd vue/
+npm i -s vue
+npm i -D babel-preset-vue @vue/component-compiler-utils vue-template-compiler
+echo '{"presets":["env","vue"]}' > .babelrc
+----
 
 == Links
 
