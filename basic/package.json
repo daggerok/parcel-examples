@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "start": "parcel serve src/",
+    "build": "parcel build src/index.html"
+  },
+  "name": "basic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Maksim Kostromin <daggerok@gmail.com> (https://github.com/daggerok)",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "parcel-bundler": "1.9.3"
+  }
+}

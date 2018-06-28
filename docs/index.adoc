@@ -33,7 +33,69 @@ include::../README.adoc[tags=content]
 
 == Implementation
 
-TODO: implement documentation...
+=== basic example
+
+.prepare project
+[source,bash]
+----
+mkdir -p basic
+
+echo "node_modules" >> basic/.gitignore
+echo "dist" >> basic/.gitignore
+echo '{"scripts":{"start":"parcel serve src/","build":"parcel build src/index.html"}}' > basic/package.json
+
+cd basic/
+npm init -y
+npm i -D parcel-bundler
+----
+
+.prepare project files
+[source,bash]
+----
+mkdir -p src
+touch src/index.html
+touch src/styles.css
+touch src/main.js
+----
+
+.main.js
+[source,javascript]
+----
+include::../basic/src/main.js[]
+----
+
+.styles.css
+[source,javascript]
+----
+include::../basic/src/styles.css[]
+----
+
+.index.html
+[source,html]
+----
+include::../basic/src/index.html[]
+----
+
+.start development
+[source,bash]
+----
+npm start
+----
+
+open http://localhost:1234
+
+.build bundle
+[source,bash]
+----
+npm run build
+----
+
+.verify result
+[source,bash]
+----
+npm i -g serve
+serve dist/
+----
 
 == Links
 
