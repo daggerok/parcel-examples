@@ -626,7 +626,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-06-28 09:00:37 UTC</span>
+<span id="revdate">2018-06-28 09:12:38 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -635,6 +635,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#implementation">2. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#basic-example">2.1. basic example</a></li>
+<li><a href="#babel-stage-0">2.2. babel-stage-0</a></li>
 </ul>
 </li>
 <li><a href="#links">3. Links</a></li>
@@ -737,7 +738,7 @@ touch src/main.js</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>open <a href="http://localhost:1234" class="bare">localhost:1234</a></p>
+<p>open <a href="http://localhost:1234/" class="bare">localhost:1234/</a></p>
 </div>
 <div class="listingblock">
 <div class="title">build bundle</div>
@@ -751,6 +752,24 @@ touch src/main.js</code></pre>
 <pre class="CodeRay highlight"><code data-lang="bash">npm i -g serve
 serve dist/</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>open <a href="http://localhost:5000/" class="bare">localhost:5000/</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="babel-stage-0"><a class="anchor" href="#babel-stage-0"></a>2.2. babel-stage-0</h3>
+<div class="listingblock">
+<div class="title">add <code>.babelrc</code> file, install and configure presets: <code>env</code> and <code>stage-0</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">cp -Rf basic babel-stage-0
+cd babel-stage-0/
+echo '{&quot;presets&quot;:[&quot;env&quot;,&quot;stage-0&quot;]}' &gt; .babelrc
+npm i -D babel-preset-env babel-preset-stage-0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>done.</p>
 </div>
 </div>
 </div>
@@ -777,7 +796,7 @@ serve dist/</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-06-28 09:00:37 UTC
+Last updated 2018-06-28 09:12:38 UTC
 </div>
 </div>
 </body>

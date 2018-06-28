@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-06-28 09:00:37 UTC</date>
+<date>2018-06-28 09:12:38 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-06-28 09:00:37 UTC</date>
+<date>2018-06-28 09:12:38 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -110,7 +110,7 @@ touch src/main.js</programlisting>
 <programlisting language="bash" linenumbering="unnumbered">npm start</programlisting>
 </para>
 </formalpara>
-<simpara>open <link xl:href="http://localhost:1234">localhost:1234</link></simpara>
+<simpara>open <link xl:href="http://localhost:1234/">localhost:1234/</link></simpara>
 <formalpara>
 <title>build bundle</title>
 <para>
@@ -124,6 +124,20 @@ touch src/main.js</programlisting>
 serve dist/</programlisting>
 </para>
 </formalpara>
+<simpara>open <link xl:href="http://localhost:5000/">localhost:5000/</link></simpara>
+</section>
+<section xml:id="babel-stage-0">
+<title>babel-stage-0</title>
+<formalpara>
+<title>add <literal>.babelrc</literal> file, install and configure presets: <literal>env</literal> and <literal>stage-0</literal></title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">cp -Rf basic babel-stage-0
+cd babel-stage-0/
+echo '{"presets":["env","stage-0"]}' &gt; .babelrc
+npm i -D babel-preset-env babel-preset-stage-0</programlisting>
+</para>
+</formalpara>
+<simpara>done.</simpara>
 </section>
 </chapter>
 <chapter xml:id="links">
