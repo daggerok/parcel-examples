@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-06-28 08:28:21 UTC</date>
+<date>2018-06-28 08:54:14 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-06-28 08:28:21 UTC</date>
+<date>2018-06-28 08:54:14 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -38,7 +38,93 @@
 </chapter>
 <chapter xml:id="implementation">
 <title>Implementation</title>
-<simpara>TODO: implement documentation&#8230;&#8203;</simpara>
+<section xml:id="basic-example">
+<title>basic example</title>
+<formalpara>
+<title>prepare project</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">mkdir -p basic
+
+echo "node_modules" &gt;&gt; basic/.gitignore
+echo "dist" &gt;&gt; basic/.gitignore
+echo '{"scripts":{"start":"parcel serve src/","build":"parcel build src/index.html"}}' &gt; basic/package.json
+
+cd basic/
+npm init -y
+npm i -D parcel-bundler</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>prepare project files</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">mkdir -p src
+touch src/index.html
+touch src/styles.css
+touch src/main.js</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>main.js</title>
+<para>
+<programlisting language="javascript" linenumbering="unnumbered">(function main() {
+  'use strict';
+  document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
+    document.querySelector('#app').textContent = 'hey!';
+  }, false);
+})();</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>styles.css</title>
+<para>
+<programlisting language="javascript" linenumbering="unnumbered">body {
+  padding: 2%;
+  margin: 0;
+}</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>index.html</title>
+<para>
+<programlisting language="html" linenumbering="unnumbered">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport"
+        content="width=device-width, initial-scale=1.0"&gt;
+  &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+  &lt;title&gt;Basic | Parcel&lt;/title&gt;
+  &lt;link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"&gt;
+  &lt;link rel="stylesheet" href="./styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="app"&gt;&lt;/div&gt;
+  &lt;script src="./main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>start development</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">npm start</programlisting>
+</para>
+</formalpara>
+<simpara>open <link xl:href="http://localhost:1234">localhost:1234</link></simpara>
+<formalpara>
+<title>build bundle</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">npm run build</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>verify result</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">npm i -g serve
+serve dist/</programlisting>
+</para>
+</formalpara>
+</section>
 </chapter>
 <chapter xml:id="links">
 <title>Links</title>

@@ -626,13 +626,17 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-06-28 08:28:21 UTC</span>
+<span id="revdate">2018-06-28 08:54:14 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#implementation">2. Implementation</a></li>
+<li><a href="#implementation">2. Implementation</a>
+<ul class="sectlevel2">
+<li><a href="#basic-example">2.1. basic example</a></li>
+</ul>
+</li>
 <li><a href="#links">3. Links</a></li>
 </ul>
 </div>
@@ -660,8 +664,94 @@ table.CodeRay td.code>pre{padding:0}
 <div class="sect1">
 <h2 id="implementation"><a class="anchor" href="#implementation"></a>2. Implementation</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="basic-example"><a class="anchor" href="#basic-example"></a>2.1. basic example</h3>
+<div class="listingblock">
+<div class="title">prepare project</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">mkdir -p basic
+
+echo &quot;node_modules&quot; &gt;&gt; basic/.gitignore
+echo &quot;dist&quot; &gt;&gt; basic/.gitignore
+echo '{&quot;scripts&quot;:{&quot;start&quot;:&quot;parcel serve src/&quot;,&quot;build&quot;:&quot;parcel build src/index.html&quot;}}' &gt; basic/package.json
+
+cd basic/
+npm init -y
+npm i -D parcel-bundler</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">prepare project files</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">mkdir -p src
+touch src/index.html
+touch src/styles.css
+touch src/main.js</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">main.js</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">(<span class="keyword">function</span> <span class="function">main</span>() {
+  <span class="string"><span class="delimiter">'</span><span class="content">use strict</span><span class="delimiter">'</span></span>;
+  document.addEventListener(<span class="string"><span class="delimiter">'</span><span class="content">DOMContentLoaded</span><span class="delimiter">'</span></span>, <span class="keyword">function</span> <span class="function">onDOMContentLoaded</span>() {
+    document.querySelector(<span class="string"><span class="delimiter">'</span><span class="content">#app</span><span class="delimiter">'</span></span>).textContent = <span class="string"><span class="delimiter">'</span><span class="content">hey!</span><span class="delimiter">'</span></span>;
+  }, <span class="predefined-constant">false</span>);
+})();</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">styles.css</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">body {
+  <span class="key">padding</span>: <span class="integer">2</span>%;
+  margin: <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">index.html</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="html"><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute-name">lang</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">en</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attribute-name">charset</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">UTF-8</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span>
+        <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">width=device-width, initial-scale=1.0</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attribute-name">http-equiv</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">X-UA-Compatible</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">ie=edge</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Basic | Parcel<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">shortcut icon</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">./favicon.ico</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">image/x-icon</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">./styles.css</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">app</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">./main.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">start development</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">npm start</code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>TODO: implement documentation&#8230;&#8203;</p>
+<p>open <a href="http://localhost:1234" class="bare">localhost:1234</a></p>
+</div>
+<div class="listingblock">
+<div class="title">build bundle</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">npm run build</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">verify result</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">npm i -g serve
+serve dist/</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -687,7 +777,7 @@ table.CodeRay td.code>pre{padding:0}
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-06-28 08:28:21 UTC
+Last updated 2018-06-28 08:54:14 UTC
 </div>
 </div>
 </body>
