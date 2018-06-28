@@ -213,3 +213,11 @@ ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
 - link:https://daggerok.gitlab.io/{root-project-name}[GitLab pages]
 - link:{bitbucket-url}[BitBucket repo]
 ////
+
+== other links:
+
+- link:https://parceljs.org/[parcel]
+- link:https://github.com/parcel-bundler/examples[parcel examples]
+- link:https://reactjs.org/[react]
+- link:https://preactjs.com/[preact]
+- link:https://vuejs.org/[vue]
