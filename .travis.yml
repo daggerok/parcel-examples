@@ -15,6 +15,22 @@ script:
 - cd $root/basic
 - npm i
 - npm run build
+#
+- cd $root/babel-stage-0
+- npm i
+- npm run build
+#
+- cd $root/react
+- npm i
+- npm run build
+#
+- cd $root/preact
+- npm i
+- npm run build
+#
+- cd $root/vue
+- npm i
+- npm run build
 
 before_deploy:
 - cd $root/
