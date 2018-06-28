@@ -3,7 +3,7 @@
     "start": "parcel serve src/",
     "build": "parcel build src/index.html"
   },
-  "name": "babel-stage-0",
+  "name": "babel-stage-0-app",
   "version": "1.0.0",
   "main": "index.js",
   "keywords": [],

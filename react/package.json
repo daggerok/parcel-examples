@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "start": "parcel serve src/",
+    "start": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
-  "name": "basic-app",
+  "name": "react-app",
   "version": "1.0.0",
   "main": "index.js",
   "keywords": [],
@@ -11,6 +11,12 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
+    "babel-preset-env": "1.7.0",
+    "babel-preset-stage-0": "6.24.1",
     "parcel-bundler": "1.9.3"
+  },
+  "dependencies": {
+    "react": "16.4.1",
+    "react-dom": "16.4.1"
   }
 }

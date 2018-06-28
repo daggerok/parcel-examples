@@ -101,6 +101,8 @@ open http://localhost:5000/
 
 === babel-stage-0
 
+parcel needed only .babelrc file and installed required presets
+
 .add `.babelrc` file, install and configure presets: `env` and `stage-0`
 [source,bash]
 ----
@@ -109,6 +111,32 @@ cd babel-stage-0/
 echo '{"presets":["env","stage-0"]}' > .babelrc
 npm i -D babel-preset-env babel-preset-stage-0
 ----
+
+done.
+
+=== react
+
+.for React you need even less: just install react library and parcel will recognize everything for you!
+[source,bash]
+----
+cp -Rf babel-stage-0 react
+cd react/
+npm i -S react react-dom
+----
+
+.add react component:
+[source,javascript]
+----
+include::../react/src/components/echo-ehlo.js[]
+----
+
+.and update code in `src/main.js` file:
+[source,javascript]
+----
+include::../react/src/main.js[]
+----
+
+build, run, verify...
 
 done.
 
