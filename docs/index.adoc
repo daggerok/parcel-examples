@@ -82,7 +82,7 @@ include::../basic/src/index.html[]
 npm start
 ----
 
-open http://localhost:1234
+open http://localhost:1234/
 
 .build bundle
 [source,bash]
@@ -96,6 +96,21 @@ npm run build
 npm i -g serve
 serve dist/
 ----
+
+open http://localhost:5000/
+
+=== babel-stage-0
+
+.add `.babelrc` file, install and configure presets: `env` and `stage-0`
+[source,bash]
+----
+cp -Rf basic babel-stage-0
+cd babel-stage-0/
+echo '{"presets":["env","stage-0"]}' > .babelrc
+npm i -D babel-preset-env babel-preset-stage-0
+----
+
+done.
 
 == Links
 
