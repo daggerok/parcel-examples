@@ -1,7 +1,3 @@
-env:
-  global:
-  - TERM=dumb
-
 language: java
 jdk: oraclejdk8
 
@@ -10,6 +6,11 @@ addons:
     update: true
 
 before_deploy: ./mvnw -Pdocs
+
+env:
+  global:
+  - TERM=dumb
+  - secure: KdBWS9LXirk9AYp6Db8Qc/1KFaQc1TB/C//s9XJj6agNnCQqIHH2jQWZp9/hTN6AGreDS2FO4Qn5DmeLzYYS+nDjSPluO46lJO/RevAmO3LdRPW1fIElw13AI9FqVgxv/kFWPazBhsKO1Bf2lWwQHugbVUPIlKuzIXPGU/018SOJZDVZnwfclgoizEvqnvpcOkDLNVeKxF7iSfgmWS8AG4ygMam9I1dmaLST3MDqZSf+3lI9CJuJ6kqW5DcJoQnwVpXkoAs+W61HDqlsUOsvr68KeiNqNIKdJB3fEAcF3YpGdYhl+pwZHXfR77qPE7c/D4q5n/oc/XboAmeXbSllB+IIVghMdsQtQGDZ7QvywAwB6wHl4liDusgGoTNGYKjqNL5B7k702AbyYVkyq6dH7c6ZTu6x3mTh/dmNvVa1XhSmUw1DZUAQBnlbMkb/0XLwMacU9OVq/jSuSDYkBivQCFe7Eyy2tmFYObQLmmRTvxFGzNmp/BZw+OLfKuBCCdaHpZaB+fRe2PVa/bjhT2Ue+giTD1Kzxg2md/9qogRYUo9MAO3kH160Bo6xhNuGHJMMrYj8tBvOaVsABqGmWcsyY83UIAseIpFKeegREjxt5M81f7cHNPRcBYL8hbK9eK1OCUJSg7ATE/qrJp4z+tVwqpx0IF1JvVy7istURu64eyY=
 
 deploy:
   provider: pages
