@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "name": "preact-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Maksim Kostromin <daggerok@gmail.com> (https://github.com/daggerok)",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-preact": "1.1.0",
+    "babel-preset-stage-0": "6.24.1",
+    "parcel-bundler": "1.9.3"
+  },
+  "dependencies": {
+    "babel-polyfill": "6.26.0",
+    "linkstate": "1.1.1",
+    "preact": "8.2.9",
+    "preact-compat": "3.18.0"
+  }
+}

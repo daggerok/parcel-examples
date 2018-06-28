@@ -1,0 +1,10 @@
+{
+  "presets": [
+    "env",
+    "preact",
+    "stage-0"
+  ],
+  "plugins": [
+    "transform-class-properties"
+  ]
+}
