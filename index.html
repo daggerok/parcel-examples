@@ -626,7 +626,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-06-28 09:12:38 UTC</span>
+<span id="revdate">2018-06-28 09:29:59 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -636,6 +636,7 @@ table.CodeRay td.code>pre{padding:0}
 <ul class="sectlevel2">
 <li><a href="#basic-example">2.1. basic example</a></li>
 <li><a href="#babel-stage-0">2.2. babel-stage-0</a></li>
+<li><a href="#react">2.3. react</a></li>
 </ul>
 </li>
 <li><a href="#links">3. Links</a></li>
@@ -759,6 +760,9 @@ serve dist/</code></pre>
 </div>
 <div class="sect2">
 <h3 id="babel-stage-0"><a class="anchor" href="#babel-stage-0"></a>2.2. babel-stage-0</h3>
+<div class="paragraph">
+<p>parcel needed only .babelrc file and installed required presets</p>
+</div>
 <div class="listingblock">
 <div class="title">add <code>.babelrc</code> file, install and configure presets: <code>env</code> and <code>stage-0</code></div>
 <div class="content">
@@ -767,6 +771,62 @@ cd babel-stage-0/
 echo '{&quot;presets&quot;:[&quot;env&quot;,&quot;stage-0&quot;]}' &gt; .babelrc
 npm i -D babel-preset-env babel-preset-stage-0</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>done.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="react"><a class="anchor" href="#react"></a>2.3. react</h3>
+<div class="listingblock">
+<div class="title">for React you need even less: just install react library and parcel will recognize everything for you!</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">cp -Rf babel-stage-0 react
+cd react/
+npm i -S react react-dom</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">add react component:</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> React, { Component } from <span class="string"><span class="delimiter">'</span><span class="content">react</span><span class="delimiter">'</span></span>;
+
+<span class="reserved">export</span> <span class="reserved">class</span> EchoEhlo <span class="reserved">extends</span> Component {
+  constructor() {
+    <span class="reserved">super</span>();
+    <span class="local-variable">this</span>.state = {
+      <span class="key">message</span>: <span class="string"><span class="delimiter">'</span><span class="content">hello</span><span class="delimiter">'</span></span>,
+    };
+    <span class="local-variable">this</span>.toggle = <span class="local-variable">this</span>.toggle.bind(<span class="local-variable">this</span>);
+  }
+  toggle() {
+    <span class="local-variable">this</span>.setState({
+      <span class="key">message</span>: <span class="local-variable">this</span>.state.message.split(<span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>).reverse().join(<span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>),
+    })
+  }
+  render() {
+    <span class="keyword">return</span> <span class="tag">&lt;h1</span> <span class="attribute-name">onClick</span>=<span class="error">{</span><span class="attribute-value">this.toggle</span><span class="error">}</span><span class="tag">&gt;</span>
+      {this.state.message}
+    <span class="tag">&lt;/h1&gt;</span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">and update code in <code>src/main.js</code> file:</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> React from <span class="string"><span class="delimiter">'</span><span class="content">react</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> { render } from <span class="string"><span class="delimiter">'</span><span class="content">react-dom</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> { EchoEhlo } from <span class="string"><span class="delimiter">'</span><span class="content">./components/echo-ehlo</span><span class="delimiter">'</span></span>;
+
+render(
+  <span class="tag">&lt;EchoEhlo</span><span class="tag">/&gt;</span>,
+  document.querySelector(<span class="string"><span class="delimiter">'</span><span class="content">#app</span><span class="delimiter">'</span></span>)
+);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>build, run, verify&#8230;&#8203;</p>
 </div>
 <div class="paragraph">
 <p>done.</p>
@@ -796,7 +856,7 @@ npm i -D babel-preset-env babel-preset-stage-0</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-06-28 09:12:38 UTC
+Last updated 2018-06-28 09:29:59 UTC
 </div>
 </div>
 </body>

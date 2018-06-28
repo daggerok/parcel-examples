@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-06-28 09:12:38 UTC</date>
+<date>2018-06-28 09:29:59 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-06-28 09:12:38 UTC</date>
+<date>2018-06-28 09:29:59 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -128,6 +128,7 @@ serve dist/</programlisting>
 </section>
 <section xml:id="babel-stage-0">
 <title>babel-stage-0</title>
+<simpara>parcel needed only .babelrc file and installed required presets</simpara>
 <formalpara>
 <title>add <literal>.babelrc</literal> file, install and configure presets: <literal>env</literal> and <literal>stage-0</literal></title>
 <para>
@@ -137,6 +138,58 @@ echo '{"presets":["env","stage-0"]}' &gt; .babelrc
 npm i -D babel-preset-env babel-preset-stage-0</programlisting>
 </para>
 </formalpara>
+<simpara>done.</simpara>
+</section>
+<section xml:id="react">
+<title>react</title>
+<formalpara>
+<title>for React you need even less: just install react library and parcel will recognize everything for you!</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">cp -Rf babel-stage-0 react
+cd react/
+npm i -S react react-dom</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>add react component:</title>
+<para>
+<programlisting language="javascript" linenumbering="unnumbered">import React, { Component } from 'react';
+
+export class EchoEhlo extends Component {
+  constructor() {
+    super();
+    this.state = {
+      message: 'hello',
+    };
+    this.toggle = this.toggle.bind(this);
+  }
+  toggle() {
+    this.setState({
+      message: this.state.message.split('').reverse().join(''),
+    })
+  }
+  render() {
+    return &lt;h1 onClick={this.toggle}&gt;
+      {this.state.message}
+    &lt;/h1&gt;
+  }
+}</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>and update code in <literal>src/main.js</literal> file:</title>
+<para>
+<programlisting language="javascript" linenumbering="unnumbered">import React from 'react';
+import { render } from 'react-dom';
+import { EchoEhlo } from './components/echo-ehlo';
+
+render(
+  &lt;EchoEhlo/&gt;,
+  document.querySelector('#app')
+);</programlisting>
+</para>
+</formalpara>
+<simpara>build, run, verify&#8230;&#8203;</simpara>
 <simpara>done.</simpara>
 </section>
 </chapter>
