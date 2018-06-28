@@ -142,7 +142,7 @@ include::../react/src/components/echo-ehlo.js[]
 .and update code in `src/main.js` file:
 [source,javascript]
 ----
-include::../react/src/main.js[]
+include::../react/src/main.js[tags=content]
 ----
 
 build, run, verify...
@@ -174,7 +174,7 @@ include::../preact/src/components/echo-ehlo.js[]
 .update entry point:
 [source,javascript]
 ----
-include::../preact/src/main.js[]
+include::../preact/src/main.js[tags=content]
 ----
 
 done.
@@ -200,7 +200,7 @@ include::../vue/src/components/App.vue[]
 .main.js
 [source,javascript]
 ----
-include::../vue/src/main.js[]
+include::../vue/src/main.js[tags=content]
 ----
 
 == Links

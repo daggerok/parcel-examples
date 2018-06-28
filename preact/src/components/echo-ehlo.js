@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 
-export default /* for some reasons, default is required: */ class EchoEhlo extends Component {
+export /* don't works without default O.o */ default class EchoEhlo extends Component {
   state = { message: 'Hey!' };
   toggle = () => {
     const curr = this.state.message;
