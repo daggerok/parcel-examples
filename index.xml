@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-06-28 11:42:29 UTC</date>
+<date>2018-06-28 11:53:01 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-06-28 11:42:29 UTC</date>
+<date>2018-06-28 11:53:01 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -249,7 +249,7 @@ echo '{"presets":["env","preact"],"plugins":["transform-class-properties"]}' &gt
 <para>
 <programlisting language="javascript" linenumbering="unnumbered">import { h, Component } from 'preact';
 
-export default /* for some reasons, default is required: */ class EchoEhlo extends Component {
+export /* don't works without default O.o */ default class EchoEhlo extends Component {
   state = { message: 'Hey!' };
   toggle = () =&gt; {
     const curr = this.state.message;
@@ -267,8 +267,7 @@ export default /* for some reasons, default is required: */ class EchoEhlo exten
 <formalpara>
 <title>update entry point:</title>
 <para>
-<programlisting language="javascript" linenumbering="unnumbered">import 'babel-polyfill';
-import { h, render } from 'preact';
+<programlisting language="javascript" linenumbering="unnumbered">import { h, render } from 'preact';
 import HeloEhlo from './components/echo-ehlo';
 
 render(
@@ -330,9 +329,7 @@ echo '{"presets":["env","vue"]}' &gt; .babelrc</programlisting>
 <formalpara>
 <title>main.js</title>
 <para>
-<programlisting language="javascript" linenumbering="unnumbered">import 'babel-polyfill';
-
-import Vue from 'vue'
+<programlisting language="javascript" linenumbering="unnumbered">import Vue from 'vue'
 import App from './components/App.vue'
 
 new Vue({
