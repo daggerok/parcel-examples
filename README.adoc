@@ -7,7 +7,7 @@ image:https://img.shields.io/bitbucket/pipelines/daggerok/parcel-examples.svg["B
 
 //tag::content[]
 
-Read link:https://daggerok.github.io/daggerok/parcel-examples[reference documentation]
+Read link:https://daggerok.github.io/parcel-examples[reference documentation]
 
 other repos with old examples:
 
