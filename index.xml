@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-06-30 13:40:09 UTC</date>
+<date>2018-06-30 17:41:36 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-06-30 13:40:09 UTC</date>
+<date>2018-06-30 17:41:36 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -336,6 +336,41 @@ new Vue({
   el: '#app',
   render: h =&gt; h(App)
 });</programlisting>
+</para>
+</formalpara>
+</section>
+<section xml:id="yaml">
+<title>yaml</title>
+<formalpara>
+<title>to be able to parse YAML we need js-yaml package:</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">cp -Rf basic yaml
+cd yaml/
+npm i -ES js-yaml</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>add YAML file:</title>
+<para>
+<programlisting language="yaml" linenumbering="unnumbered">app:
+  map:
+    key: value
+  list:
+  - value 1
+  - value 2</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>main.js</title>
+<para>
+<programlisting language="javascript" linenumbering="unnumbered">import app from './app.yaml';
+
+document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
+  document.querySelector('#app').innerHTML = `
+    &lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;
+    &lt;pre&gt;${JSON.stringify(app, null, 2)}&lt;/pre&gt;
+  `;
+}, false);</programlisting>
 </para>
 </formalpara>
 </section>

@@ -554,7 +554,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-06-30 13:40:09 UTC</span>
+<span id="revdate">2018-06-30 17:41:36 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -567,6 +567,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#react">2.3. react</a></li>
 <li><a href="#preact">2.4. preact</a></li>
 <li><a href="#vue">2.5. vue</a></li>
+<li><a href="#yaml">2.6. yaml</a></li>
 </ul>
 </li>
 <li><a href="#links">3. Links</a></li>
@@ -916,6 +917,41 @@ echo '{&quot;presets&quot;:[&quot;env&quot;,&quot;vue&quot;]}' &gt; .babelrc</co
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="yaml"><a class="anchor" href="#yaml"></a>2.6. yaml</h3>
+<div class="listingblock">
+<div class="title">to be able to parse YAML we need js-yaml package:</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">cp -Rf basic yaml
+cd yaml/
+npm i -ES js-yaml</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">add YAML file:</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">app</span>:
+  <span class="key">map</span>:
+    <span class="key">key</span>: <span class="string"><span class="content">value</span></span>
+  <span class="key">list</span>:
+  - <span class="string"><span class="content">value 1</span></span>
+  - <span class="string"><span class="content">value 2</span></span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">main.js</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> app from <span class="string"><span class="delimiter">'</span><span class="content">./app.yaml</span><span class="delimiter">'</span></span>;
+
+document.addEventListener(<span class="string"><span class="delimiter">'</span><span class="content">DOMContentLoaded</span><span class="delimiter">'</span></span>, <span class="keyword">function</span> <span class="function">onDOMContentLoaded</span>() {
+  document.querySelector(<span class="string"><span class="delimiter">'</span><span class="content">#app</span><span class="delimiter">'</span></span>).innerHTML = <span class="error">`</span>
+    <span class="tag">&lt;h1&gt;</span>Hey! 📦 🚀<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;pre&gt;</span>${JSON.stringify(app, null, 2)}<span class="tag">&lt;/pre&gt;</span>
+  <span class="error">`</span>;
+}, <span class="predefined-constant">false</span>);</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -964,7 +1000,7 @@ echo '{&quot;presets&quot;:[&quot;env&quot;,&quot;vue&quot;]}' &gt; .babelrc</co
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-06-30 13:40:09 UTC
+Last updated 2018-06-30 17:41:36 UTC
 </div>
 </div>
 </body>
