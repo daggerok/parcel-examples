@@ -554,7 +554,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-06-30 17:41:36 UTC</span>
+<span id="revdate">2018-06-30 18:51:46 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -568,6 +568,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#preact">2.4. preact</a></li>
 <li><a href="#vue">2.5. vue</a></li>
 <li><a href="#yaml">2.6. yaml</a></li>
+<li><a href="#markdown">2.7. markdown</a></li>
 </ul>
 </li>
 <li><a href="#links">3. Links</a></li>
@@ -863,7 +864,7 @@ render(
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="bash">cp -Rf babel-stage-0 vue
 cd vue/
-npm i -s vue
+npm i -S vue
 npm i -D babel-preset-vue @vue/component-compiler-utils vue-template-compiler
 echo '{&quot;presets&quot;:[&quot;env&quot;,&quot;vue&quot;]}' &gt; .babelrc</code></pre>
 </div>
@@ -952,6 +953,76 @@ document.addEventListener(<span class="string"><span class="delimiter">'</span><
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="markdown"><a class="anchor" href="#markdown"></a>2.7. markdown</h3>
+<div class="listingblock">
+<div class="title">to be able to parse YAML we need parcel-plugin-markdown package:</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">cp -Rf basic markdown
+cd markdown/
+npm i -ED parcel-plugin-markdown</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">add <code>app.md</code> file:</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="markdown"># app
+
+## ololo
+
+**ololo article**
+
+list:
+
+- one
+- two
+- three
+
+## trolololololo
+
+    _O_
+     |
+    / \
+
+## js
+
+&lt;!--
+
+---
+title: JavaSCript Article'
+metadata:
+  ololo: trololo
+---
+
+--&gt;
+
+### JS article
+
+js, ololo, trololo, javascript, olololo ololo, trololo, olololo ololo, trololo, olololo ololo,
+trololo, olololo, js, ololo, trololo, olololo, js ololo, trololo, olololo.....
+
+```javascript
+function ololo(arg) {
+  arg = arg || 'trololo';
+  console.log('ololo', arg);
+}
+```</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">main.js</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> app from<span class="string"><span class="delimiter">'</span><span class="content">./app.md</span><span class="delimiter">'</span></span>;
+
+document.addEventListener(<span class="string"><span class="delimiter">'</span><span class="content">DOMContentLoaded</span><span class="delimiter">'</span></span>, <span class="keyword">function</span> <span class="function">onDOMContentLoaded</span>() {
+  document.querySelector(<span class="string"><span class="delimiter">'</span><span class="content">#app</span><span class="delimiter">'</span></span>).innerHTML = <span class="error">`</span>
+    <span class="tag">&lt;h1&gt;</span>Hey! 📦 🚀<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;div&gt;</span>${app}<span class="tag">&lt;/div&gt;</span>
+  <span class="error">`</span>;
+}, <span class="predefined-constant">false</span>);</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1000,7 +1071,7 @@ document.addEventListener(<span class="string"><span class="delimiter">'</span><
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-06-30 17:41:36 UTC
+Last updated 2018-06-30 18:51:46 UTC
 </div>
 </div>
 </body>

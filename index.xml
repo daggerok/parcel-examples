@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-06-30 17:41:36 UTC</date>
+<date>2018-06-30 18:51:46 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-06-30 17:41:36 UTC</date>
+<date>2018-06-30 18:51:46 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -285,7 +285,7 @@ render(
 <para>
 <programlisting language="bash" linenumbering="unnumbered">cp -Rf babel-stage-0 vue
 cd vue/
-npm i -s vue
+npm i -S vue
 npm i -D babel-preset-vue @vue/component-compiler-utils vue-template-compiler
 echo '{"presets":["env","vue"]}' &gt; .babelrc</programlisting>
 </para>
@@ -369,6 +369,76 @@ document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
   document.querySelector('#app').innerHTML = `
     &lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;
     &lt;pre&gt;${JSON.stringify(app, null, 2)}&lt;/pre&gt;
+  `;
+}, false);</programlisting>
+</para>
+</formalpara>
+</section>
+<section xml:id="markdown">
+<title>markdown</title>
+<formalpara>
+<title>to be able to parse YAML we need parcel-plugin-markdown package:</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">cp -Rf basic markdown
+cd markdown/
+npm i -ED parcel-plugin-markdown</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>add <literal>app.md</literal> file:</title>
+<para>
+<programlisting language="markdown" linenumbering="unnumbered"># app
+
+## ololo
+
+**ololo article**
+
+list:
+
+- one
+- two
+- three
+
+## trolololololo
+
+    _O_
+     |
+    / \
+
+## js
+
+&lt;!--
+
+---
+title: JavaSCript Article'
+metadata:
+  ololo: trololo
+---
+
+--&gt;
+
+### JS article
+
+js, ololo, trololo, javascript, olololo ololo, trololo, olololo ololo, trololo, olololo ololo,
+trololo, olololo, js, ololo, trololo, olololo, js ololo, trololo, olololo.....
+
+```javascript
+function ololo(arg) {
+  arg = arg || 'trololo';
+  console.log('ololo', arg);
+}
+```</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>main.js</title>
+<para>
+<programlisting language="javascript" linenumbering="unnumbered">import app from'./app.md';
+
+document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
+  document.querySelector('#app').innerHTML = `
+    &lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;
+    &lt;div&gt;${app}&lt;/div&gt;
   `;
 }, false);</programlisting>
 </para>
