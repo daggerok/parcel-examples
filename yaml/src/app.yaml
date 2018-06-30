@@ -1,0 +1,6 @@
+app:
+  map:
+    key: value
+  list:
+  - value 1
+  - value 2

@@ -31,6 +31,10 @@ script:
 - cd $root/vue
 - npm i
 - npm run build
+#
+- cd $root/yaml
+- npm i
+- npm run build
 
 before_deploy:
 - cd $root/
