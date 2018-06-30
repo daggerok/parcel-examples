@@ -1,5 +1,5 @@
 'use strict';
-
+//tag::content[]
 import app from './app.yaml';
 
 document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
@@ -8,3 +8,4 @@ document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
     <pre>${JSON.stringify(app, null, 2)}</pre>
   `;
 }, false);
+//end::content[]

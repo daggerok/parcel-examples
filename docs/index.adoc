@@ -203,6 +203,28 @@ include::../vue/src/components/App.vue[]
 include::../vue/src/main.js[tags=content]
 ----
 
+=== yaml
+
+.to be able to parse YAML we need js-yaml package:
+[source,bash]
+----
+cp -Rf basic yaml
+cd yaml/
+npm i -ES js-yaml
+----
+
+.add YAML file:
+[source,yaml]
+----
+include::../yaml/src/app.yaml[]
+----
+
+.main.js
+[source,javascript]
+----
+include::../yaml/src/main.js[tags=content]
+----
+
 == Links
 
 ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
