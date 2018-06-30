@@ -186,7 +186,7 @@ done.
 ----
 cp -Rf babel-stage-0 vue
 cd vue/
-npm i -s vue
+npm i -S vue
 npm i -D babel-preset-vue @vue/component-compiler-utils vue-template-compiler
 echo '{"presets":["env","vue"]}' > .babelrc
 ----
@@ -214,6 +214,28 @@ npm i -ES js-yaml
 ----
 
 .add YAML file:
+[source,yaml]
+----
+include::../yaml/src/app.yaml[]
+----
+
+.main.js
+[source,javascript]
+----
+include::../yaml/src/main.js[tags=content]
+----
+
+=== markdown
+
+.to be able to parse YAML we need parcel-plugin-markdown package:
+[source,bash]
+----
+cp -Rf basic markdown
+cd markdown/
+npm i -ED parcel-plugin-markdown
+----
+
+.add markdown file:
 [source,yaml]
 ----
 include::../yaml/src/app.yaml[]

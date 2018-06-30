@@ -50,6 +50,14 @@
                 <fileset><directory>${basedir}/yaml/.cache</directory></fileset>
                 <fileset><directory>${basedir}/yaml/dist</directory></fileset>
                 <fileset><directory>${basedir}/yaml/node_modules</directory></fileset>
+
+                <fileset><directory>${basedir}/markdown/.cache</directory></fileset>
+                <fileset><directory>${basedir}/markdown/dist</directory></fileset>
+                <fileset><directory>${basedir}/markdown/node_modules</directory></fileset>
+
+                <fileset><directory>${basedir}/markdowns/.cache</directory></fileset>
+                <fileset><directory>${basedir}/markdowns/dist</directory></fileset>
+                <fileset><directory>${basedir}/markdowns/node_modules</directory></fileset>
               </filesets>
             </configuration>
           </plugin>
