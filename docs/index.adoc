@@ -235,16 +235,16 @@ cd markdown/
 npm i -ED parcel-plugin-markdown
 ----
 
-.add markdown file:
-[source,yaml]
+.add `app.md` file:
+[source,markdown]
 ----
-include::../yaml/src/app.yaml[]
+include::../markdown/src/app.md[]
 ----
 
 .main.js
 [source,javascript]
 ----
-include::../yaml/src/main.js[tags=content]
+include::../markdown/src/main.js[tags=content]
 ----
 
 == Links
