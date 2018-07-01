@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "name": "markdowns-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Maksim Kostromin <daggerok@gmail.com> (https://github.com/daggerok)",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "10.5.1",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-stage-0": "6.24.1",
+    "parcel-bundler": "1.9.3"
+  },
+  "dependencies": {
+    "babel-polyfill": "6.26.0",
+    "marked": "0.4.0"
+  }
+}
