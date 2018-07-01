@@ -2,22 +2,21 @@ import marked from 'marked';
 
 const years = require('./posts/**/*.md');
 
-Object.keys(years)
-  .map(year => {
-    const months = years[year];
-    Object.keys(months).map(month => {
-      const days = months[month];
-      Object.keys(days).map(day => {
-        const posts = days[day];
-        Object.keys(posts)
-          .map(src => posts[src])
-          .forEach(uri => fetch(uri)
-            .then(resp => resp.text())
-            .then(markdown => marked(markdown))
-            .then(html => document.querySelector('#app').innerHTML += html));
-      });
+Object.keys(years).map(year => {
+  const months = years[year];
+  Object.keys(months).map(month => {
+    const days = months[month];
+    Object.keys(days).map(day => {
+      const posts = days[day];
+      Object.keys(posts)
+        .map(src => posts[src])
+        .forEach(uri => fetch(uri)
+          .then(resp => resp.text())
+          .then(markdown => marked(markdown))
+          .then(html => document.querySelector('#app').innerHTML += html));
     });
   });
+});
 
 /*
 // import 'babel-polyfill';
