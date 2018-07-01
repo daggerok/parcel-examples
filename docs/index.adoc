@@ -249,19 +249,13 @@ include::../markdown/src/main.js[tags=content]
 
 == Links
 
-ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
-- link:{github-url}[GitHub repo]
-- link:https://daggerok.github.io/{root-project-name}[GitHub pages]
-////
-- link:{gitlab-url}[GitLab repo]
-- link:https://daggerok.gitlab.io/{root-project-name}[GitLab pages]
-- link:{bitbucket-url}[BitBucket repo]
-////
-
-== other links:
-
 - link:https://parceljs.org/[parcel]
 - link:https://github.com/parcel-bundler/examples[parcel examples]
 - link:https://reactjs.org/[react]
 - link:https://preactjs.com/[preact]
 - link:https://vuejs.org/[vue]
+
+---
+ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
+- link:{github-url}[GitHub repo]
+- link:https://daggerok.github.io/{root-project-name}[GitHub pages]

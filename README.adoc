@@ -1,10 +1,5 @@
 = parcel-examples image:https://travis-ci.org/daggerok/parcel-examples.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/parcel-examples"]
 
-////
-image:https://gitlab.com/daggerok/parcel-examples/badges/master/build.svg["Build Status", link="https://gitlab.com/daggerok/parcel-examples/-/jobs"]
-image:https://img.shields.io/bitbucket/pipelines/daggerok/parcel-examples.svg["Build Status", link="https://bitbucket.com/daggerok/parcel-examples"]
-////
-
 //tag::content[]
 
 Read link:https://daggerok.github.io/parcel-examples[reference documentation]
