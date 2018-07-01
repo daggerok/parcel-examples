@@ -1,3 +1,4 @@
+//tag::content[]
 import marked from 'marked';
 
 const years = require('./posts/**/*.md');
@@ -17,6 +18,7 @@ Object.keys(years).map(year => {
     });
   });
 });
+//end::content[]
 
 /*
 // import 'babel-polyfill';

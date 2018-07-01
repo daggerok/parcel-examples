@@ -249,6 +249,31 @@ include::../markdown/src/main.js[tags=content]
 
 NOTE: See also `markdowns` and `markdowns2` projects for non single md-file parsing use case...
 
+=== markdowns (2)
+
+example how we can handle lazy loading with parcel for markdown files lazy processing on runtime
+
+.add `./src/posts` folder with some posts in markdown format:
+[source,bash]
+----
+tree markdowns2/src/posts/
+markdowns2/src/posts/
+└── 2018
+    └── 06
+        ├── 29
+        │   ├── 01-ololo.md
+        │   └── 02-trololo.md
+        └── 30
+            ├── 01-javascript.md
+            └── 02-bash.md
+----
+
+.`main.js` implementation:
+[source,javascript]
+----
+include::../markdowns2/src/main.js[tags=content]
+----
+
 == Links
 
 - link:https://parceljs.org/[parcel]
