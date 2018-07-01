@@ -39,6 +39,14 @@ script:
 - cd $root/markdown
 - npm i
 - npm run build
+#
+- cd $root/markdowns
+- npm i
+- npm run build
+#
+- cd $root/markdowns2
+- npm i
+- npm run build
 
 before_deploy:
 - cd $root/

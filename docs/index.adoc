@@ -247,7 +247,7 @@ include::../markdown/src/app.md[]
 include::../markdown/src/main.js[tags=content]
 ----
 
-NOTE: See also markdowns project for non single md-file parsing use case...
+NOTE: See also `markdowns` and `markdowns2` projects for non single md-file parsing use case...
 
 == Links
 

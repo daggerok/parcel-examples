@@ -58,6 +58,10 @@
                 <fileset><directory>${basedir}/markdowns/.cache</directory></fileset>
                 <fileset><directory>${basedir}/markdowns/dist</directory></fileset>
                 <fileset><directory>${basedir}/markdowns/node_modules</directory></fileset>
+
+                <fileset><directory>${basedir}/markdowns2/.cache</directory></fileset>
+                <fileset><directory>${basedir}/markdowns2/dist</directory></fileset>
+                <fileset><directory>${basedir}/markdowns2/node_modules</directory></fileset>
               </filesets>
             </configuration>
           </plugin>
