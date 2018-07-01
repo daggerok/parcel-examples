@@ -1,9 +1,4 @@
 = {root-project-name} ({project-version})
-////
-image:https://travis-ci.org/daggerok/root-project-name.svg?branch=master["Build Status", link=github-url]
-image:https://gitlab.com/daggerok/root-project-name/badges/master/build.svg["Build Status", link=gitlab-url]
-image:https://img.shields.io/bitbucket/pipelines/daggerok/root-project-name.svg["Build Status", link=bitbucket-url]
-////
 Maksim Kostromin <daggerok@gmail.com>
 {docdatetime}
 :doctype: book
@@ -18,14 +13,6 @@ Maksim Kostromin <daggerok@gmail.com>
 
 Travis CI status:
 image:https://travis-ci.org/daggerok/{root-project-name}.svg?branch=master["Build Status", link={github-url}]
-
-////
-GitLab CI status:
-image:https://gitlab.com/daggerok/{root-project-name}/badges/master/build.svg["Build Status", link={gitlab-url}]
-
-BitBucket CI status:
-image:https://img.shields.io/bitbucket/pipelines/daggerok/{root-project-name}.svg["Build Status", link={bitbucket-url}]
-////
 
 == Introduction
 
