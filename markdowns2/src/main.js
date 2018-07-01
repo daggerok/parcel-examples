@@ -2,6 +2,26 @@ import 'babel-polyfill';
 import marked from 'marked';
 
 const yearsObject = require('./posts/**/*.md');
+
+Object.keys(yearsObject)
+  .map(year => {
+    const monthsObject = yearsObject[year];
+    Object.keys(monthsObject).map(month => {
+      const daysObject = monthsObject[month];
+      Object.keys(daysObject).map(day => {
+        const postsMapping = daysObject[day];
+        Object.keys(postsMapping)
+          .map(src => postsMapping[src])
+          .forEach(distPath => fetch(distPath)
+            .then(resp => resp.text())
+            .then(markdown => marked(markdown))
+            .then(html => document.querySelector('#app').innerHTML += html));
+      });
+    });
+  });
+
+/*
+const yearsObject = require('./posts/!**!/!*.md');
 const years = Object.keys(yearsObject);
 
 Promise.all(years.map(year => {
@@ -23,3 +43,4 @@ Promise.all(years.map(year => {
     }));
   }));
 })).catch(err => console.error(err));
+*/
