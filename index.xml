@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-07-01 13:56:53 UTC</date>
+<date>2018-07-01 14:01:19 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-07-01 13:56:53 UTC</date>
+<date>2018-07-01 14:01:19 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -446,6 +446,49 @@ document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
 <note>
 <simpara>See also <literal>markdowns</literal> and <literal>markdowns2</literal> projects for non single md-file parsing use case&#8230;&#8203;</simpara>
 </note>
+</section>
+<section xml:id="markdowns-2">
+<title>markdowns (2)</title>
+<simpara>example how we can handle lazy loading with parcel for markdown files lazy processing on runtime</simpara>
+<formalpara>
+<title>add <literal>./src/posts</literal> folder with some posts in markdown format:</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">tree markdowns2/src/posts/
+markdowns2/src/posts/
+└── 2018
+    └── 06
+        ├── 29
+        │   ├── 01-ololo.md
+        │   └── 02-trololo.md
+        └── 30
+            ├── 01-javascript.md
+            └── 02-bash.md</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title><literal>main.js</literal> implementation:</title>
+<para>
+<programlisting language="javascript" linenumbering="unnumbered">import marked from 'marked';
+
+const years = require('./posts/**/*.md');
+
+Object.keys(years).map(year =&gt; {
+  const months = years[year];
+  Object.keys(months).map(month =&gt; {
+    const days = months[month];
+    Object.keys(days).map(day =&gt; {
+      const posts = days[day];
+      Object.keys(posts)
+        .map(src =&gt; posts[src])
+        .forEach(uri =&gt; fetch(uri)
+          .then(resp =&gt; resp.text())
+          .then(markdown =&gt; marked(markdown))
+          .then(html =&gt; document.querySelector('#app').innerHTML += html));
+    });
+  });
+});</programlisting>
+</para>
+</formalpara>
 </section>
 </chapter>
 <chapter xml:id="links">
