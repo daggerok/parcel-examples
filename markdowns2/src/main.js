@@ -1,4 +1,4 @@
-import 'babel-polyfill';
+// import 'babel-polyfill';
 import marked from 'marked';
 
 const yearsObject = require('./posts/**/*.md');
