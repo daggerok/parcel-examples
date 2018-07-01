@@ -261,6 +261,58 @@ markdowns2/src/posts/
 include::../markdowns2/src/main.js[tags=content]
 ----
 
+=== angularjs
+
+with no comments - I tired....
+
+.`./src/index.html`
+[source,html]
+----
+include::../angularjs/src/index.html[]
+----
+
+.Main application bootstrap entrypoint: `./src/main.js`
+[source,js]
+----
+include::../angularjs/src/main.js[tags=content]
+----
+
+.Application module config: `./src/app/index.js`
+[source,js]
+----
+include::../angularjs/src/app/index.js[]
+----
+
+.Components module config: `./src/app/components/index.js`
+[source,js]
+----
+include::../angularjs/src/app/components/index.js[]
+----
+
+.App module config: `./src/app/components/app/index.js`
+[source,js]
+----
+include::../angularjs/src/app/components/app/index.js[]
+----
+
+.App component config: `./src/app/components/app/config.js`
+[source,js]
+----
+include::../angularjs/src/app/components/app/config.js[]
+----
+
+.App component: `./src/app/components/app/component.js`
+[source,js]
+----
+include::../angularjs/src/app/components/app/component.js[]
+----
+
+.App component controller: `./src/app/components/app/controller.js`
+[source,js]
+----
+include::../angularjs/src/app/components/app/controller.js[]
+----
+
 == Links
 
 - link:https://parceljs.org/[parcel]

@@ -62,6 +62,10 @@
                 <fileset><directory>${basedir}/markdowns2/.cache</directory></fileset>
                 <fileset><directory>${basedir}/markdowns2/dist</directory></fileset>
                 <fileset><directory>${basedir}/markdowns2/node_modules</directory></fileset>
+
+                <fileset><directory>${basedir}/angularjs/.cache</directory></fileset>
+                <fileset><directory>${basedir}/angularjs/dist</directory></fileset>
+                <fileset><directory>${basedir}/angularjs/node_modules</directory></fileset>
               </filesets>
             </configuration>
           </plugin>

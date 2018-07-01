@@ -47,6 +47,10 @@ script:
 - cd $root/markdowns2
 - npm i
 - npm run build
+#
+- cd $root/angularjs
+- npm i
+- npm run build
 
 before_deploy:
 - cd $root/
