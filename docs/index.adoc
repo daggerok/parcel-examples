@@ -270,6 +270,9 @@ include::../markdowns2/src/main.js[tags=content]
 - link:https://vuejs.org/[vue]
 
 ---
+- link:https://github.com/parcel-bundler/awesome-parcel[GitHub: parcel-bundler/awesome-parcel]
+
+---
 ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
 - link:{github-url}[GitHub repo]
 - link:https://daggerok.github.io/{root-project-name}[GitHub pages]
