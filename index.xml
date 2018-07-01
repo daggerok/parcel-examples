@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-06-30 18:51:46 UTC</date>
+<date>2018-07-01 04:22:23 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-06-30 18:51:46 UTC</date>
+<date>2018-07-01 04:22:23 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -449,17 +449,6 @@ document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
 <title>Links</title>
 <itemizedlist>
 <listitem>
-<simpara><link xl:href="https://github.com/daggerok/parcel-examples">GitHub repo</link></simpara>
-</listitem>
-<listitem>
-<simpara><link xl:href="https://daggerok.github.io/parcel-examples">GitHub pages</link></simpara>
-</listitem>
-</itemizedlist>
-</chapter>
-<chapter xml:id="other-links">
-<title>other links:</title>
-<itemizedlist>
-<listitem>
 <simpara><link xl:href="https://parceljs.org/">parcel</link></simpara>
 </listitem>
 <listitem>
@@ -473,6 +462,15 @@ document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
 </listitem>
 <listitem>
 <simpara><link xl:href="https://vuejs.org/">vue</link></simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-hr?></simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xl:href="https://github.com/daggerok/parcel-examples">GitHub repo</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="https://daggerok.github.io/parcel-examples">GitHub pages</link></simpara>
 </listitem>
 </itemizedlist>
 </chapter>
