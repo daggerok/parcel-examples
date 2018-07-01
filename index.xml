@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-07-01 14:29:09 UTC</date>
+<date>2018-07-01 16:39:16 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-07-01 14:29:09 UTC</date>
+<date>2018-07-01 16:39:16 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -487,6 +487,162 @@ Object.keys(years).map(year =&gt; {
     });
   });
 });</programlisting>
+</para>
+</formalpara>
+</section>
+<section xml:id="angularjs">
+<title>angularjs</title>
+<simpara>with no comments - I tired&#8230;&#8203;.</simpara>
+<formalpara>
+<title><literal>./src/index.html</literal></title>
+<para>
+<programlisting language="html" linenumbering="unnumbered">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport"
+        content="width=device-width, initial-scale=1.0"&gt;
+  &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+  &lt;title&gt;AngularJS | Parcel&lt;/title&gt;
+  &lt;link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;app&gt; loading...&lt;/app&gt;
+&lt;script src="./main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>Main application bootstrap entrypoint: <literal>./src/main.js</literal></title>
+<para>
+<programlisting language="js" linenumbering="unnumbered">import 'angular/angular-csp.css';
+import './styles.css';
+//
+import angular from 'angular';
+import applicationModule from './app';
+
+angular.bootstrap(document, [applicationModule.name], {
+  strictDi: true, // data-ng-strict-di=""
+  cloak: true,    // data-ng-cloak=""
+});</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>Application module config: <literal>./src/app/index.js</literal></title>
+<para>
+<programlisting language="js" linenumbering="unnumbered">/**
+ * Application module configuration.
+ */
+
+import angular from 'angular';
+import uiRouter from 'angular-ui-router';
+//
+import ComponentsModule from './components';
+
+const applicationModule = angular.module('application.module', [
+  uiRouter,
+  ComponentsModule.name,
+]);
+
+const Config = ($urlRouterProvider, $locationProvider) =&gt; {
+  $urlRouterProvider.otherwise('/');
+  $locationProvider.hashPrefix('!');
+};
+
+applicationModule.config(['$urlRouterProvider', '$locationProvider', Config]);
+
+export default applicationModule;</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>Components module config: <literal>./src/app/components/index.js</literal></title>
+<para>
+<programlisting language="js" linenumbering="unnumbered">/**
+ * Components module configuration.
+ */
+
+import angular from 'angular';
+//
+import AppComponentModule from './app';
+
+const componentsModule = angular
+  .module('components.module', [
+    AppComponentModule.name,
+  ]);
+
+export default componentsModule;</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>App module config: <literal>./src/app/components/app/index.js</literal></title>
+<para>
+<programlisting language="js" linenumbering="unnumbered">/**
+ * App component module configuration.
+ */
+
+import angular from 'angular';
+import uiRouter from 'angular-ui-router';
+//
+import Config from './config.js';
+import Component from './component.js';
+
+const appComponentModule = angular
+  .module('app.component.module', [uiRouter])
+  .component('app', Component)
+  .config(['$stateProvider', Config]);
+
+export default appComponentModule;</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>App component config: <literal>./src/app/components/app/config.js</literal></title>
+<para>
+<programlisting language="js" linenumbering="unnumbered">export default ($stateProvider) =&gt; $stateProvider.state({
+  url: '/',
+  name: 'app',
+  template: `&lt;app&gt;&lt;/app&gt;`,
+});</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>App component: <literal>./src/app/components/app/component.js</literal></title>
+<para>
+<programlisting language="js" linenumbering="unnumbered">import Controller from './controller.js';
+
+export default {
+  controller: Controller,
+  template: `
+    &lt;header ng-click="$ctrl.toggleGreeting()"&gt;header&lt;/header&gt;
+
+    &lt;div class="container-fluid"&gt;
+      &lt;div class="row"&gt;{{ $ctrl.greeting }}&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;footer&gt;footer&lt;/footer&gt;
+  `,
+}</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>App component controller: <literal>./src/app/components/app/controller.js</literal></title>
+<para>
+<programlisting language="js" linenumbering="unnumbered">export default class Controller {
+  constructor() {
+    this.$ctrl = this;
+  }
+
+  $onInit() {
+    this.greeting = this.first = 'hi';
+    this.second = 'yay!';
+  }
+
+  toggleGreeting() {
+    this.greeting = this.greeting === this.first
+      ? this.second
+      : this.first;
+  }
+}</programlisting>
 </para>
 </formalpara>
 </section>

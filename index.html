@@ -554,7 +554,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-07-01 14:29:09 UTC</span>
+<span id="revdate">2018-07-01 16:39:16 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -570,6 +570,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#yaml">2.6. yaml</a></li>
 <li><a href="#markdown">2.7. markdown</a></li>
 <li><a href="#markdowns-2">2.8. markdowns (2)</a></li>
+<li><a href="#angularjs">2.9. angularjs</a></li>
 </ul>
 </li>
 <li><a href="#links">3. Links</a></li>
@@ -1080,6 +1081,164 @@ Object.keys(years).map(year =&gt; {
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="angularjs"><a class="anchor" href="#angularjs"></a>2.9. angularjs</h3>
+<div class="paragraph">
+<p>with no comments - I tired&#8230;&#8203;.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>./src/index.html</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="html"><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute-name">lang</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">en</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attribute-name">charset</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">UTF-8</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span>
+        <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">width=device-width, initial-scale=1.0</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attribute-name">http-equiv</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">X-UA-Compatible</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">ie=edge</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;title&gt;</span>AngularJS | Parcel<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">shortcut icon</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">./favicon.ico</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">image/x-icon</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+<span class="tag">&lt;app&gt;</span> loading...<span class="tag">&lt;/app&gt;</span>
+<span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">./main.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Main application bootstrap entrypoint: <code>./src/main.js</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="js"><span class="reserved">import</span> <span class="string"><span class="delimiter">'</span><span class="content">angular/angular-csp.css</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> <span class="string"><span class="delimiter">'</span><span class="content">./styles.css</span><span class="delimiter">'</span></span>;
+<span class="comment">//</span>
+<span class="reserved">import</span> angular from <span class="string"><span class="delimiter">'</span><span class="content">angular</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> applicationModule from <span class="string"><span class="delimiter">'</span><span class="content">./app</span><span class="delimiter">'</span></span>;
+
+angular.bootstrap(document, [applicationModule.name], {
+  <span class="key">strictDi</span>: <span class="predefined-constant">true</span>, <span class="comment">// data-ng-strict-di=&quot;&quot;</span>
+  <span class="key">cloak</span>: <span class="predefined-constant">true</span>,    <span class="comment">// data-ng-cloak=&quot;&quot;</span>
+});</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Application module config: <code>./src/app/index.js</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="js"><span class="comment">/**
+ * Application module configuration.
+ */</span>
+
+<span class="reserved">import</span> angular from <span class="string"><span class="delimiter">'</span><span class="content">angular</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> uiRouter from <span class="string"><span class="delimiter">'</span><span class="content">angular-ui-router</span><span class="delimiter">'</span></span>;
+<span class="comment">//</span>
+<span class="reserved">import</span> ComponentsModule from <span class="string"><span class="delimiter">'</span><span class="content">./components</span><span class="delimiter">'</span></span>;
+
+const applicationModule = angular.module(<span class="string"><span class="delimiter">'</span><span class="content">application.module</span><span class="delimiter">'</span></span>, [
+  uiRouter,
+  ComponentsModule.name,
+]);
+
+const Config = (<span class="predefined">$urlRouterProvider</span>, <span class="predefined">$locationProvider</span>) =&gt; {
+  <span class="predefined">$urlRouterProvider</span>.otherwise(<span class="string"><span class="delimiter">'</span><span class="content">/</span><span class="delimiter">'</span></span>);
+  <span class="predefined">$locationProvider</span>.hashPrefix(<span class="string"><span class="delimiter">'</span><span class="content">!</span><span class="delimiter">'</span></span>);
+};
+
+applicationModule.config([<span class="string"><span class="delimiter">'</span><span class="content">$urlRouterProvider</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">$locationProvider</span><span class="delimiter">'</span></span>, Config]);
+
+<span class="reserved">export</span> <span class="keyword">default</span> applicationModule;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Components module config: <code>./src/app/components/index.js</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="js"><span class="comment">/**
+ * Components module configuration.
+ */</span>
+
+<span class="reserved">import</span> angular from <span class="string"><span class="delimiter">'</span><span class="content">angular</span><span class="delimiter">'</span></span>;
+<span class="comment">//</span>
+<span class="reserved">import</span> AppComponentModule from <span class="string"><span class="delimiter">'</span><span class="content">./app</span><span class="delimiter">'</span></span>;
+
+const componentsModule = angular
+  .module(<span class="string"><span class="delimiter">'</span><span class="content">components.module</span><span class="delimiter">'</span></span>, [
+    AppComponentModule.name,
+  ]);
+
+<span class="reserved">export</span> <span class="keyword">default</span> componentsModule;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">App module config: <code>./src/app/components/app/index.js</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="js"><span class="comment">/**
+ * App component module configuration.
+ */</span>
+
+<span class="reserved">import</span> angular from <span class="string"><span class="delimiter">'</span><span class="content">angular</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> uiRouter from <span class="string"><span class="delimiter">'</span><span class="content">angular-ui-router</span><span class="delimiter">'</span></span>;
+<span class="comment">//</span>
+<span class="reserved">import</span> Config from <span class="string"><span class="delimiter">'</span><span class="content">./config.js</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> Component from <span class="string"><span class="delimiter">'</span><span class="content">./component.js</span><span class="delimiter">'</span></span>;
+
+const appComponentModule = angular
+  .module(<span class="string"><span class="delimiter">'</span><span class="content">app.component.module</span><span class="delimiter">'</span></span>, [uiRouter])
+  .component(<span class="string"><span class="delimiter">'</span><span class="content">app</span><span class="delimiter">'</span></span>, Component)
+  .config([<span class="string"><span class="delimiter">'</span><span class="content">$stateProvider</span><span class="delimiter">'</span></span>, Config]);
+
+<span class="reserved">export</span> <span class="keyword">default</span> appComponentModule;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">App component config: <code>./src/app/components/app/config.js</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="js"><span class="reserved">export</span> <span class="keyword">default</span> (<span class="predefined">$stateProvider</span>) =&gt; <span class="predefined">$stateProvider</span>.state({
+  <span class="key">url</span>: <span class="string"><span class="delimiter">'</span><span class="content">/</span><span class="delimiter">'</span></span>,
+  <span class="key">name</span>: <span class="string"><span class="delimiter">'</span><span class="content">app</span><span class="delimiter">'</span></span>,
+  <span class="key">template</span>: <span class="error">`</span><span class="tag">&lt;app&gt;</span><span class="tag">&lt;/app&gt;</span><span class="error">`</span>,
+});</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">App component: <code>./src/app/components/app/component.js</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="js"><span class="reserved">import</span> Controller from <span class="string"><span class="delimiter">'</span><span class="content">./controller.js</span><span class="delimiter">'</span></span>;
+
+<span class="reserved">export</span> <span class="keyword">default</span> {
+  <span class="key">controller</span>: Controller,
+  <span class="key">template</span>: <span class="error">`</span>
+    <span class="tag">&lt;header</span> <span class="attribute-name">ng-click</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">$ctrl.toggleGreeting()</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>header<span class="tag">&lt;/header&gt;</span>
+
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">container-fluid</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>{{ $ctrl.greeting }}<span class="tag">&lt;/div&gt;</span>
+    &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">div&gt;
+
+    &lt;footer&gt;footer&lt;</span><span class="delimiter">/</span></span>footer&gt;
+  <span class="error">`</span>,
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">App component controller: <code>./src/app/components/app/controller.js</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="js"><span class="reserved">export</span> <span class="keyword">default</span> <span class="reserved">class</span> Controller {
+  constructor() {
+    <span class="local-variable">this</span>.<span class="predefined">$ctrl</span> = <span class="local-variable">this</span>;
+  }
+
+  <span class="predefined">$onInit</span>() {
+    <span class="local-variable">this</span>.greeting = <span class="local-variable">this</span>.first = <span class="string"><span class="delimiter">'</span><span class="content">hi</span><span class="delimiter">'</span></span>;
+    <span class="local-variable">this</span>.second = <span class="string"><span class="delimiter">'</span><span class="content">yay!</span><span class="delimiter">'</span></span>;
+  }
+
+  toggleGreeting() {
+    <span class="local-variable">this</span>.greeting = <span class="local-variable">this</span>.greeting === <span class="local-variable">this</span>.first
+      ? <span class="local-variable">this</span>.second
+      : <span class="local-variable">this</span>.first;
+  }
+}</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1132,7 +1291,7 @@ Object.keys(years).map(year =&gt; {
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-07-01 14:29:09 UTC
+Last updated 2018-07-01 16:39:16 UTC
 </div>
 </div>
 </body>
