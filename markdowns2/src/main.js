@@ -1,18 +1,17 @@
-// import 'babel-polyfill';
 import marked from 'marked';
 
-const yearsObject = require('./posts/**/*.md');
+const years = require('./posts/**/*.md');
 
-Object.keys(yearsObject)
+Object.keys(years)
   .map(year => {
-    const monthsObject = yearsObject[year];
-    Object.keys(monthsObject).map(month => {
-      const daysObject = monthsObject[month];
-      Object.keys(daysObject).map(day => {
-        const postsMapping = daysObject[day];
-        Object.keys(postsMapping)
-          .map(src => postsMapping[src])
-          .forEach(distPath => fetch(distPath)
+    const months = years[year];
+    Object.keys(months).map(month => {
+      const days = months[month];
+      Object.keys(days).map(day => {
+        const posts = days[day];
+        Object.keys(posts)
+          .map(src => posts[src])
+          .forEach(uri => fetch(uri)
             .then(resp => resp.text())
             .then(markdown => marked(markdown))
             .then(html => document.querySelector('#app').innerHTML += html));
@@ -21,6 +20,8 @@ Object.keys(yearsObject)
   });
 
 /*
+// import 'babel-polyfill';
+
 const yearsObject = require('./posts/!**!/!*.md');
 const years = Object.keys(yearsObject);
 
