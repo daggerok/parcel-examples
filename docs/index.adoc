@@ -247,6 +247,8 @@ include::../markdown/src/app.md[]
 include::../markdown/src/main.js[tags=content]
 ----
 
+NOTE: See also markdowns project for non single md-file parsing use case...
+
 == Links
 
 - link:https://parceljs.org/[parcel]
