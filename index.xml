@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-07-16 19:04:23 UTC</date>
+<date>2018-07-16 19:22:55 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-07-16 19:04:23 UTC</date>
+<date>2018-07-16 19:22:55 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -657,7 +657,9 @@ npm i -S bootstrap
 npm i -ED babel-preset-env babel-preset-react babel-preset-stage-0</programlisting>
 </para>
 </formalpara>
-<simpara>..babelrc</simpara>
+<formalpara>
+<title>file <literal>.babelrc</literal></title>
+<para>
 <programlisting language="json" linenumbering="unnumbered">{
   "presets": [
     ["env", {
@@ -669,6 +671,8 @@ npm i -ED babel-preset-env babel-preset-react babel-preset-stage-0</programlisti
     "stage-0"
   ]
 }</programlisting>
+</para>
+</formalpara>
 <formalpara>
 <title>add bootstrap import and add some bootstrap class for styling:</title>
 <para>
