@@ -313,6 +313,24 @@ include::../angularjs/src/app/components/app/component.js[]
 include::../angularjs/src/app/components/app/controller.js[]
 ----
 
+=== react + bootstrap (4)
+
+.prepare
+[source,bash]
+----
+cp -Rf react react-bootstrap
+cd react-bootstrap/
+npm i -S bootstrap
+----
+
+.add bootstrap import and add some bootstrap class for styling:
+[source,javascript]
+----
+include::../react-bootstrap/src/components/echo-ehlo.js[]
+----
+
+done.
+
 == Links
 
 - link:https://parceljs.org/[parcel]

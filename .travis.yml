@@ -51,6 +51,10 @@ script:
 - cd $root/angularjs
 - npm i
 - npm run build
+#
+- cd $root/react-bootstrap
+- npm i
+- npm run build
 
 before_deploy:
 - cd $root/
