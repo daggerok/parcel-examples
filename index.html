@@ -554,7 +554,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-07-16 18:35:36 UTC</span>
+<span id="revdate">2018-07-16 19:04:23 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -1247,7 +1247,26 @@ const appComponentModule = angular
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="bash">cp -Rf react react-bootstrap
 cd react-bootstrap/
-npm i -S bootstrap</code></pre>
+npm i -S bootstrap
+npm i -ED babel-preset-env babel-preset-react babel-preset-stage-0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>..babelrc</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">presets</span><span class="delimiter">&quot;</span></span>: [
+    [<span class="string"><span class="delimiter">&quot;</span><span class="content">env</span><span class="delimiter">&quot;</span></span>, {
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">targets</span><span class="delimiter">&quot;</span></span>: {
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">browsers</span><span class="delimiter">&quot;</span></span>: [<span class="string"><span class="delimiter">&quot;</span><span class="content">last 2 versions</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">safari &gt;= 7</span><span class="delimiter">&quot;</span></span>]
+      }
+    }],
+    <span class="string"><span class="delimiter">&quot;</span><span class="content">react</span><span class="delimiter">&quot;</span></span>,
+    <span class="string"><span class="delimiter">&quot;</span><span class="content">stage-0</span><span class="delimiter">&quot;</span></span>
+  ]
+}</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1334,7 +1353,7 @@ npm i -S bootstrap</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-07-16 18:35:36 UTC
+Last updated 2018-07-16 19:04:23 UTC
 </div>
 </div>
 </body>
