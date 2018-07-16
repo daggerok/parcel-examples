@@ -321,6 +321,13 @@ include::../angularjs/src/app/components/app/controller.js[]
 cp -Rf react react-bootstrap
 cd react-bootstrap/
 npm i -S bootstrap
+npm i -ED babel-preset-env babel-preset-react babel-preset-stage-0
+----
+
+..babelrc
+[source,json]
+----
+include::../react-bootstrap/.babelrc[]
 ----
 
 .add bootstrap import and add some bootstrap class for styling:
