@@ -554,7 +554,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-07-01 16:39:16 UTC</span>
+<span id="revdate">2018-07-16 18:35:36 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -571,6 +571,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#markdown">2.7. markdown</a></li>
 <li><a href="#markdowns-2">2.8. markdowns (2)</a></li>
 <li><a href="#angularjs">2.9. angularjs</a></li>
+<li><a href="#react-bootstrap-4">2.10. react + bootstrap (4)</a></li>
 </ul>
 </li>
 <li><a href="#links">3. Links</a></li>
@@ -1239,6 +1240,48 @@ const appComponentModule = angular
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="react-bootstrap-4"><a class="anchor" href="#react-bootstrap-4"></a>2.10. react + bootstrap (4)</h3>
+<div class="listingblock">
+<div class="title">prepare</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">cp -Rf react react-bootstrap
+cd react-bootstrap/
+npm i -S bootstrap</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">add bootstrap import and add some bootstrap class for styling:</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> <span class="string"><span class="delimiter">'</span><span class="content">bootstrap/dist/css/bootstrap.css</span><span class="delimiter">'</span></span>;
+
+<span class="reserved">import</span> React, { Component } from <span class="string"><span class="delimiter">'</span><span class="content">react</span><span class="delimiter">'</span></span>;
+
+<span class="reserved">export</span> <span class="reserved">class</span> EchoEhlo <span class="reserved">extends</span> Component {
+  constructor() {
+    <span class="reserved">super</span>();
+    <span class="local-variable">this</span>.state = {
+      <span class="key">message</span>: <span class="string"><span class="delimiter">'</span><span class="content">Hey!</span><span class="delimiter">'</span></span>,
+    };
+    <span class="local-variable">this</span>.toggle = <span class="local-variable">this</span>.toggle.bind(<span class="local-variable">this</span>);
+  }
+  toggle() {
+    <span class="local-variable">this</span>.setState({
+      <span class="key">message</span>: <span class="local-variable">this</span>.state.message.split(<span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>).reverse().join(<span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>),
+    })
+  }
+  render() {
+    <span class="keyword">return</span> <span class="tag">&lt;h1</span> <span class="attribute-name">onClick</span>=<span class="error">{</span><span class="attribute-value">this.toggle</span><span class="error">}</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">'</span><span class="content">alert-heading</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+      {this.state.message} 📦 🚀
+    <span class="tag">&lt;/h1&gt;</span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>done.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1291,7 +1334,7 @@ const appComponentModule = angular
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-07-01 16:39:16 UTC
+Last updated 2018-07-16 18:35:36 UTC
 </div>
 </div>
 </body>

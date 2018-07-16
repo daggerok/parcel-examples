@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-07-01 16:39:16 UTC</date>
+<date>2018-07-16 18:35:36 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-07-01 16:39:16 UTC</date>
+<date>2018-07-16 18:35:36 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -645,6 +645,46 @@ export default {
 }</programlisting>
 </para>
 </formalpara>
+</section>
+<section xml:id="react-bootstrap-4">
+<title>react + bootstrap (4)</title>
+<formalpara>
+<title>prepare</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">cp -Rf react react-bootstrap
+cd react-bootstrap/
+npm i -S bootstrap</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>add bootstrap import and add some bootstrap class for styling:</title>
+<para>
+<programlisting language="javascript" linenumbering="unnumbered">import 'bootstrap/dist/css/bootstrap.css';
+
+import React, { Component } from 'react';
+
+export class EchoEhlo extends Component {
+  constructor() {
+    super();
+    this.state = {
+      message: 'Hey!',
+    };
+    this.toggle = this.toggle.bind(this);
+  }
+  toggle() {
+    this.setState({
+      message: this.state.message.split('').reverse().join(''),
+    })
+  }
+  render() {
+    return &lt;h1 onClick={this.toggle} className='alert-heading'&gt;
+      {this.state.message} 📦 🚀
+    &lt;/h1&gt;
+  }
+}</programlisting>
+</para>
+</formalpara>
+<simpara>done.</simpara>
 </section>
 </chapter>
 <chapter xml:id="links">
