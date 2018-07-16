@@ -324,7 +324,7 @@ npm i -S bootstrap
 npm i -ED babel-preset-env babel-preset-react babel-preset-stage-0
 ----
 
-..babelrc
+.file `.babelrc`
 [source,json]
 ----
 include::../react-bootstrap/.babelrc[]
