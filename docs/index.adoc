@@ -342,7 +342,7 @@ done.
 === typescript
 
 .you don't needed anything special. parcel compiling typescript working out of the box
-[source,typescript]
+[source,ts]
 ----
 include::../ts/src/main.ts[]
 ----
@@ -358,7 +358,7 @@ cd rxts/
 npm i -E rxjs
 ----
 
-[source,typescript]
+[source,ts]
 ----
 include::../rxts/src/main.ts[]
 ----
