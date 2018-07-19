@@ -16,6 +16,10 @@ script:
 - npm i
 - npm run build
 #
+- cd $root/rxts
+- npm i
+- npm run build
+#
 - cd $root/ts
 - npm i
 - npm run build
