@@ -71,6 +71,10 @@
                 <fileset><directory>${basedir}/ts/dist</directory></fileset>
                 <fileset><directory>${basedir}/ts/node_modules</directory></fileset>
 
+                <fileset><directory>${basedir}/rxts/.cache</directory></fileset>
+                <fileset><directory>${basedir}/rxts/dist</directory></fileset>
+                <fileset><directory>${basedir}/rxts/node_modules</directory></fileset>
+
                 <fileset><directory>${basedir}/react-bootstrap/.cache</directory></fileset>
                 <fileset><directory>${basedir}/react-bootstrap/dist</directory></fileset>
                 <fileset><directory>${basedir}/react-bootstrap/node_modules</directory></fileset>
