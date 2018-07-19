@@ -360,7 +360,7 @@ npm i -E rxjs
 
 [source,typescript]
 ----
-include::../ts/src/main.ts[]
+include::../rxts/src/main.ts[]
 ----
 
 done.
