@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-07-19 22:37:13 UTC</date>
+<date>2018-07-19 22:48:35 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-07-19 22:37:13 UTC</date>
+<date>2018-07-19 22:48:35 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -740,8 +740,12 @@ export class EchoEhlo extends Component {
 <formalpara>
 <title>you don&#8217;t needed anything special. parcel compiling typescript working out of the box</title>
 <para>
-<programlisting language="typescript" linenumbering="unnumbered">document.addEventListener('DOMContentLoaded', () =&gt; {
-  document.querySelector('#app').innerHTML = '&lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;';
+<programlisting language="typescript" linenumbering="unnumbered">document.addEventListener('DOMContentLoaded', (e: Event) =&gt; {
+  const app: HTMLDivElement = document.querySelector('#app');
+  app.innerHTML = `
+    &lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;
+  `;
+  console.log(`event ${e.type} handled`);
 }, false);</programlisting>
 </para>
 </formalpara>
@@ -756,7 +760,7 @@ npm i -E rxjs</programlisting>
 
 fromEvent(document, 'DOMContentLoaded').subscribe((e: Event) =&gt; {
   const button: HTMLButtonElement = document.querySelector('#greet');
-  fromEvent(button, 'click').subscribe(e =&gt; {
+  fromEvent(button, 'click').subscribe((e: Event) =&gt; {
     document.querySelector('#message').innerHTML = `
       &lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;
     `;

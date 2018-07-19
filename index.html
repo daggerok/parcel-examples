@@ -482,7 +482,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-07-19 22:37:13 UTC</span>
+<span id="revdate">2018-07-19 22:48:35 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -1268,8 +1268,12 @@ export class EchoEhlo extends Component {
 <div class="listingblock">
 <div class="title">you don&#8217;t needed anything special. parcel compiling typescript working out of the box</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">document.addEventListener('DOMContentLoaded', () =&gt; {
-  document.querySelector('#app').innerHTML = '&lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;';
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">document.addEventListener('DOMContentLoaded', (e: Event) =&gt; {
+  const app: HTMLDivElement = document.querySelector('#app');
+  app.innerHTML = `
+    &lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;
+  `;
+  console.log(`event ${e.type} handled`);
 }, false);</code></pre>
 </div>
 </div>
@@ -1292,7 +1296,7 @@ npm i -E rxjs</code></pre>
 
 fromEvent(document, 'DOMContentLoaded').subscribe((e: Event) =&gt; {
   const button: HTMLButtonElement = document.querySelector('#greet');
-  fromEvent(button, 'click').subscribe(e =&gt; {
+  fromEvent(button, 'click').subscribe((e: Event) =&gt; {
     document.querySelector('#message').innerHTML = `
       &lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;
     `;
@@ -1356,7 +1360,7 @@ fromEvent(document, 'DOMContentLoaded').subscribe((e: Event) =&gt; {
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-07-19 22:37:13 UTC
+Last updated 2018-07-19 22:48:35 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
