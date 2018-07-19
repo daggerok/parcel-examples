@@ -66,6 +66,14 @@
                 <fileset><directory>${basedir}/angularjs/.cache</directory></fileset>
                 <fileset><directory>${basedir}/angularjs/dist</directory></fileset>
                 <fileset><directory>${basedir}/angularjs/node_modules</directory></fileset>
+
+                <fileset><directory>${basedir}/ts/.cache</directory></fileset>
+                <fileset><directory>${basedir}/ts/dist</directory></fileset>
+                <fileset><directory>${basedir}/ts/node_modules</directory></fileset>
+
+                <fileset><directory>${basedir}/react-bootstrap/.cache</directory></fileset>
+                <fileset><directory>${basedir}/react-bootstrap/dist</directory></fileset>
+                <fileset><directory>${basedir}/react-bootstrap/node_modules</directory></fileset>
               </filesets>
             </configuration>
           </plugin>
