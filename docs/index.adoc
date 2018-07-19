@@ -358,7 +358,8 @@ cd rxts/
 npm i -E rxjs
 ----
 
-[source,ts]
+.file `main.ts`:
+[source, typescript]
 ----
 include::../rxts/src/main.ts[]
 ----
