@@ -2,6 +2,17 @@
 
 //tag::content[]
 
+- plain javascript
+- typescript
+- es next using babel
+- vue
+- react
+- preact
+- angularjs
+- yaml
+- markdown
+- and many more!
+
 Read link:https://daggerok.github.io/parcel-examples[reference documentation]
 
 other repos with old examples:

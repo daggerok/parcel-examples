@@ -338,6 +338,28 @@ include::../react-bootstrap/src/components/echo-ehlo.js[]
 
 done.
 
+=== typescript
+
+you don't needed anything special. parcel compiling typescript working out of the box
+
+.add `.babelrc` file, install and configure presets: `env` and `stage-0`
+[source,bash]
+----
+cp -Rf basic ts
+cd ts/
+npm i
+npm start
+npm run build
+----
+
+.now you can use cool TS features:
+[source,javascript]
+----
+include::../ts/src/main.ts[]
+----
+
+done.
+
 == Links
 
 - link:https://parceljs.org/[parcel]
