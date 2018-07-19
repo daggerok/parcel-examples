@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2018-07-19 21:40:44 UTC</date>
+<date>2018-07-19 22:09:55 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-07-19 21:40:44 UTC</date>
+<date>2018-07-19 22:09:55 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -737,25 +737,24 @@ export class EchoEhlo extends Component {
 </section>
 <section xml:id="typescript">
 <title>typescript</title>
-<simpara>you don&#8217;t needed anything special. parcel compiling typescript working out of the box</simpara>
 <formalpara>
-<title>add <literal>.babelrc</literal> file, install and configure presets: <literal>env</literal> and <literal>stage-0</literal></title>
-<para>
-<programlisting language="bash" linenumbering="unnumbered">cp -Rf basic ts
-cd ts/
-npm i
-npm start
-npm run build</programlisting>
-</para>
-</formalpara>
-<formalpara>
-<title>now you can use cool TS features:</title>
+<title>you don&#8217;t needed anything special. parcel compiling typescript working out of the box</title>
 <para>
 <programlisting language="javascript" linenumbering="unnumbered">document.addEventListener('DOMContentLoaded', () =&gt; {
   document.querySelector('#app').innerHTML = '&lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;';
 }, false);</programlisting>
 </para>
 </formalpara>
+<simpara>done.</simpara>
+</section>
+<section xml:id="rx-js-typescript">
+<title>rx.js + typescript</title>
+<programlisting language="bash" linenumbering="unnumbered">cp -Rf ts rxts
+cd rxts/
+npm i -E rxjs</programlisting>
+<programlisting language="typescript" linenumbering="unnumbered">document.addEventListener('DOMContentLoaded', () =&gt; {
+  document.querySelector('#app').innerHTML = '&lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;';
+}, false);</programlisting>
 <simpara>done.</simpara>
 </section>
 </chapter>

@@ -554,7 +554,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-07-19 21:40:44 UTC</span>
+<span id="revdate">2018-07-19 22:09:55 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -573,6 +573,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#angularjs">2.9. angularjs</a></li>
 <li><a href="#react-bootstrap-4">2.10. react + bootstrap (4)</a></li>
 <li><a href="#typescript">2.11. typescript</a></li>
+<li><a href="#rx-js-typescript">2.12. rx.js + typescript</a></li>
 </ul>
 </li>
 <li><a href="#links">3. Links</a></li>
@@ -1336,25 +1337,32 @@ npm i -ED babel-preset-env babel-preset-react babel-preset-stage-0</code></pre>
 </div>
 <div class="sect2">
 <h3 id="typescript"><a class="anchor" href="#typescript"></a>2.11. typescript</h3>
-<div class="paragraph">
-<p>you don&#8217;t needed anything special. parcel compiling typescript working out of the box</p>
-</div>
 <div class="listingblock">
-<div class="title">add <code>.babelrc</code> file, install and configure presets: <code>env</code> and <code>stage-0</code></div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">cp -Rf basic ts
-cd ts/
-npm i
-npm start
-npm run build</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">now you can use cool TS features:</div>
+<div class="title">you don&#8217;t needed anything special. parcel compiling typescript working out of the box</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="javascript">document.addEventListener(<span class="string"><span class="delimiter">'</span><span class="content">DOMContentLoaded</span><span class="delimiter">'</span></span>, () =&gt; {
   document.querySelector(<span class="string"><span class="delimiter">'</span><span class="content">#app</span><span class="delimiter">'</span></span>).innerHTML = <span class="string"><span class="delimiter">'</span><span class="content">&lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;</span><span class="delimiter">'</span></span>;
 }, <span class="predefined-constant">false</span>);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>done.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rx-js-typescript"><a class="anchor" href="#rx-js-typescript"></a>2.12. rx.js + typescript</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">cp -Rf ts rxts
+cd rxts/
+npm i -E rxjs</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="typescript">document.addEventListener('DOMContentLoaded', () =&gt; {
+  document.querySelector('#app').innerHTML = '&lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;';
+}, false);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1413,7 +1421,7 @@ npm run build</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-07-19 21:40:44 UTC
+Last updated 2018-07-19 22:09:55 UTC
 </div>
 </div>
 </body>
