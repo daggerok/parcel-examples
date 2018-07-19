@@ -340,20 +340,24 @@ done.
 
 === typescript
 
-you don't needed anything special. parcel compiling typescript working out of the box
+.you don't needed anything special. parcel compiling typescript working out of the box
+[source,javascript]
+----
+include::../ts/src/main.ts[]
+----
 
-.add `.babelrc` file, install and configure presets: `env` and `stage-0`
+done.
+
+=== rx.js + typescript
+
 [source,bash]
 ----
-cp -Rf basic ts
-cd ts/
-npm i
-npm start
-npm run build
+cp -Rf ts rxts
+cd rxts/
+npm i -E rxjs
 ----
 
-.now you can use cool TS features:
-[source,javascript]
+[source,typescript]
 ----
 include::../ts/src/main.ts[]
 ----
