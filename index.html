@@ -554,7 +554,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-07-16 19:26:09 UTC</span>
+<span id="revdate">2018-07-19 21:19:10 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -572,6 +572,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#markdowns-2">2.8. markdowns (2)</a></li>
 <li><a href="#angularjs">2.9. angularjs</a></li>
 <li><a href="#react-bootstrap-4">2.10. react + bootstrap (4)</a></li>
+<li><a href="#typescript">2.11. typescript</a></li>
 </ul>
 </li>
 <li><a href="#links">3. Links</a></li>
@@ -590,6 +591,40 @@ table.CodeRay td.code>pre{padding:0}
 <div class="sect1">
 <h2 id="introduction"><a class="anchor" href="#introduction"></a>1. Introduction</h2>
 <div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>plain javascript</p>
+</li>
+<li>
+<p>typescript</p>
+</li>
+<li>
+<p>es next using babel</p>
+</li>
+<li>
+<p>vue</p>
+</li>
+<li>
+<p>react</p>
+</li>
+<li>
+<p>preact</p>
+</li>
+<li>
+<p>angularjs</p>
+</li>
+<li>
+<p>yaml</p>
+</li>
+<li>
+<p>markdown</p>
+</li>
+<li>
+<p>and many more!</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>Read <a href="https://daggerok.github.io/parcel-examples">reference documentation</a></p>
 </div>
@@ -1299,6 +1334,33 @@ npm i -ED babel-preset-env babel-preset-react babel-preset-stage-0</code></pre>
 <p>done.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="typescript"><a class="anchor" href="#typescript"></a>2.11. typescript</h3>
+<div class="paragraph">
+<p>you don&#8217;t needed anything special. parcel compiling typescript working out of the box</p>
+</div>
+<div class="listingblock">
+<div class="title">add <code>.babelrc</code> file, install and configure presets: <code>env</code> and <code>stage-0</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">cp -Rf basic ts
+cd ts/
+npm i
+npm start
+npm run build</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">now you can use cool TS features:</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">document.addEventListener(<span class="string"><span class="delimiter">'</span><span class="content">DOMContentLoaded</span><span class="delimiter">'</span></span>, () =&gt; {
+  document.querySelector(<span class="string"><span class="delimiter">'</span><span class="content">#app</span><span class="delimiter">'</span></span>).innerHTML = <span class="string"><span class="delimiter">'</span><span class="content">&lt;h1&gt;Hey! 📦 🚀&lt;/h1&gt;</span><span class="delimiter">'</span></span>;
+}, <span class="predefined-constant">false</span>);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>done.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1351,7 +1413,7 @@ npm i -ED babel-preset-env babel-preset-react babel-preset-stage-0</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-07-16 19:26:09 UTC
+Last updated 2018-07-19 21:19:10 UTC
 </div>
 </div>
 </body>
