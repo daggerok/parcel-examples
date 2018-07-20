@@ -9,8 +9,8 @@ Maksim Kostromin <daggerok@gmail.com>
 :hide-uri-scheme:
 :revnumber: {project-version}
 :example-caption!:
-:source-highlighter: highlightjs
-//:source-highlighter: prettify
+//:source-highlighter: highlightjs
+:source-highlighter: prettify
 
 Travis CI status:
 image:https://travis-ci.org/daggerok/{root-project-name}.svg?branch=master["Build Status", link={github-url}]
