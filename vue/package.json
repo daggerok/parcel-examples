@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "parcel serve src/",
+    "start": "parcel serve src/index.html",
     "build": "parcel build src/index.html"
   },
   "name": "vue-app",
@@ -11,16 +11,17 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
-    "@vue/component-compiler-utils": "2.0.0",
+    "@vue/component-compiler-utils": "2.5.1",
+    "babel-core": "^6.26.3",
     "babel-preset-env": "1.7.0",
     "babel-preset-stage-0": "6.24.1",
     "babel-preset-vue": "2.0.2",
-    "parcel-bundler": "1.9.3",
-    "vue-template-compiler": "2.5.16"
+    "parcel-bundler": "1.11.0",
+    "vue-template-compiler": "2.5.22"
   },
   "dependencies": {
     "babel-polyfill": "6.26.0",
-    "vue": "2.5.16",
-    "vue-hot-reload-api": "2.3.0"
+    "vue": "2.5.22",
+    "vue-hot-reload-api": "2.3.1"
   }
 }

@@ -11,10 +11,10 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "rxjs": "6.2.2"
+    "rxjs": "6.3.3"
   },
   "devDependencies": {
-    "parcel-bundler": "1.9.7",
-    "typescript": "2.9.2"
+    "parcel-bundler": "1.11.0",
+    "typescript": "3.2.4"
   }
 }

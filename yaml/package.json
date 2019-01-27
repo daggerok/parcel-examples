@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "parcel src/",
+    "start": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
   "name": "yaml-app",
@@ -11,9 +11,9 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
-    "parcel-bundler": "1.9.3"
+    "parcel-bundler": "1.11.0"
   },
   "dependencies": {
-    "js-yaml": "3.12.0"
+    "js-yaml": "3.12.1"
   }
 }
