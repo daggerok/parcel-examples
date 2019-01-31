@@ -43,10 +43,10 @@ script:
 - cd $root/yaml
 - npm i
 - npm run build
-#
-- cd $root/markdown
-- npm i
-- npm run build
+  ## not worked
+  #- cd $root/markdown
+  #- npm i
+  #- npm run build
 #
 - cd $root/markdowns
 - npm i
