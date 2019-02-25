@@ -63,6 +63,10 @@ script:
 - cd $root/react-bootstrap
 - npm i
 - npm run build
+#
+- cd $root/sass-bootstrap
+- npm i
+- npm run build
 
 before_deploy:
 - cd $root/

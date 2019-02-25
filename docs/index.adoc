@@ -366,6 +366,32 @@ include::../rxts/src/main.ts[]
 
 done.
 
+=== bootstrap.scss
+
+[source,bash]
+----
+cp -Rf react-bootstrap sass-bootstrap
+cd sass-bootstrap/
+npm i
+echo '$primary: #c63 !default;' > src/_variables.scss
+mv src/styles.css src/styles.scss
+# similary fix index.html: styles.css -> styles.scss
+----
+
+.remove import from file `src/components/echo-ehlo.js`:
+[source, javascript]
+----
+// import 'bootstrap/dist/css/bootstrap.css';
+----
+
+.update file `styles.scss`:
+[source, scss]
+----
+include::../sass-bootstrap/src/styles.scss[tags=bootstrap]
+----
+
+done.
+
 == Links
 
 - link:https://parceljs.org/[parcel]
