@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2019-01-31 02:11:27 UTC</date>
+<date>2019-02-25 19:39:10 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2019-01-31 02:11:27 UTC</date>
+<date>2019-02-25 19:39:10 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -769,6 +769,29 @@ fromEvent(document, 'DOMContentLoaded').subscribe((e: Event) =&gt; {
     `;
   });
 });</programlisting>
+</para>
+</formalpara>
+<simpara>done.</simpara>
+</section>
+<section xml:id="bootstrap-scss">
+<title>bootstrap.scss</title>
+<programlisting language="bash" linenumbering="unnumbered">cp -Rf react-bootstrap sass-bootstrap
+cd sass-bootstrap/
+npm i
+echo '$primary: #c63 !default;' &gt; src/_variables.scss
+mv src/styles.css src/styles.scss
+# similary fix index.html: styles.css -&gt; styles.scss</programlisting>
+<formalpara>
+<title>remove import from file <literal>src/components/echo-ehlo.js</literal>:</title>
+<para>
+<programlisting language="javascript" linenumbering="unnumbered">// import 'bootstrap/dist/css/bootstrap.css';</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>update file <literal>styles.scss</literal>:</title>
+<para>
+<programlisting language="scss" linenumbering="unnumbered">@import "./variables.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";</programlisting>
 </para>
 </formalpara>
 <simpara>done.</simpara>
