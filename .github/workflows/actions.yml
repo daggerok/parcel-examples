@@ -1,0 +1,353 @@
+name: GitHub actions workflows
+on: [push]
+jobs:
+  react-hooks:
+    strategy:
+      matrix:
+        java: [11]
+        os: [ubuntu-latest]
+        nodejs-version: [12]
+    name: react-hooks with nodejs ${{ matrix.nodejs-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Git clone
+        uses: actions/checkout@v1
+      - name: Install curl
+        run: sudo apt-get install -y curl
+      - name: Setup NodeJS ${{ matrix.nodejs-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.nodejs-version }}
+      - name: Cache npm ${{ matrix.nodejs-version }} deps
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ matrix.os }}-npm-
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.os }}-npm-
+      - name: Install npm apps (wait-port)
+        run: npm install -g wait-port
+      - name: Cache react-hooks $GITHUB_WORKSPACE/react-hooks/node_modules
+        uses: actions/cache@v1
+        with:
+          path: $GITHUB_WORKSPACE/react-hooks/node_modules
+          key: ${{ runner.os }}-nodejs-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nodejs-
+            ${{ runner.os }}-
+      - name: Build react-hooks app
+        run: |
+          cd $GITHUB_WORKSPACE/react-hooks && npm i -E
+          cd $GITHUB_WORKSPACE/react-hooks && npm build
+          cd $GITHUB_WORKSPACE/react-hooks && npm start
+          cd $GITHUB_WORKSPACE/react-hooks && npm run logs &
+      - name: Test react-hooks app
+        run: |
+          wait-port 1234
+          curl 127.0.0.1:1234
+      - name: Stop react-hooks app
+        run: cd $GITHUB_WORKSPACE/react-hooks && npm stop
+  sass-bootstrap:
+    strategy:
+      matrix:
+        java: [11]
+        os: [ubuntu-latest]
+        nodejs-version: [12]
+    name: sass-bootstrap with nodejs ${{ matrix.nodejs-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Git clone
+        uses: actions/checkout@v1
+      - name: Install curl
+        run: sudo apt-get install -y curl
+      - name: Setup NodeJS ${{ matrix.nodejs-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.nodejs-version }}
+      - name: Cache npm ${{ matrix.nodejs-version }} deps
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ matrix.os }}-npm-
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.os }}-npm-
+      - name: Install npm apps (wait-port)
+        run: npm install -g wait-port
+      - name: Cache sass-bootstrap $GITHUB_WORKSPACE/sass-bootstrap/node_modules
+        uses: actions/cache@v1
+        with:
+          path: $GITHUB_WORKSPACE/sass-bootstrap/node_modules
+          key: ${{ runner.os }}-nodejs-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nodejs-
+            ${{ runner.os }}-
+      - name: Build sass-bootstrap app
+        run: |
+          cd $GITHUB_WORKSPACE/sass-bootstrap && npm i -E
+          cd $GITHUB_WORKSPACE/sass-bootstrap && npm build
+  react-bootstrap:
+    strategy:
+      matrix:
+        java: [11]
+        os: [ubuntu-latest]
+        nodejs-version: [12]
+    name: react-bootstrap with nodejs ${{ matrix.nodejs-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Git clone
+        uses: actions/checkout@v1
+      - name: Install curl
+        run: sudo apt-get install -y curl
+      - name: Setup NodeJS ${{ matrix.nodejs-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.nodejs-version }}
+      - name: Cache npm ${{ matrix.nodejs-version }} deps
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ matrix.os }}-npm-
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.os }}-npm-
+      - name: Install npm apps (wait-port)
+        run: npm install -g wait-port
+      - name: Cache react-bootstrap $GITHUB_WORKSPACE/react-bootstrap/node_modules
+        uses: actions/cache@v1
+        with:
+          path: $GITHUB_WORKSPACE/react-bootstrap/node_modules
+          key: ${{ runner.os }}-nodejs-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nodejs-
+            ${{ runner.os }}-
+      - name: Build react-bootstrap app
+        run: |
+          cd $GITHUB_WORKSPACE/react-bootstrap && npm i -E
+          cd $GITHUB_WORKSPACE/react-bootstrap && npm build
+  angularjs:
+    strategy:
+      matrix:
+        java: [11]
+        os: [ubuntu-latest]
+        nodejs-version: [12]
+    name: angularjs with nodejs ${{ matrix.nodejs-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Git clone
+        uses: actions/checkout@v1
+      - name: Install curl
+        run: sudo apt-get install -y curl
+      - name: Setup NodeJS ${{ matrix.nodejs-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.nodejs-version }}
+      - name: Cache npm ${{ matrix.nodejs-version }} deps
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ matrix.os }}-npm-
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.os }}-npm-
+      - name: Install npm apps (wait-port)
+        run: npm install -g wait-port
+      - name: Cache angularjs $GITHUB_WORKSPACE/angularjs/node_modules
+        uses: actions/cache@v1
+        with:
+          path: $GITHUB_WORKSPACE/angularjs/node_modules
+          key: ${{ runner.os }}-nodejs-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nodejs-
+            ${{ runner.os }}-
+      - name: Build angularjs app
+        run: |
+          cd $GITHUB_WORKSPACE/angularjs && npm i -E
+          cd $GITHUB_WORKSPACE/angularjs && npm build
+  markdowns2:
+    strategy:
+      matrix:
+        java: [11]
+        os: [ubuntu-latest]
+        nodejs-version: [12]
+    name: markdowns2 with nodejs ${{ matrix.nodejs-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Git clone
+        uses: actions/checkout@v1
+      - name: Install curl
+        run: sudo apt-get install -y curl
+      - name: Setup NodeJS ${{ matrix.nodejs-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.nodejs-version }}
+      - name: Cache npm ${{ matrix.nodejs-version }} deps
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ matrix.os }}-npm-
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.os }}-npm-
+      - name: Install npm apps (wait-port)
+        run: npm install -g wait-port
+      - name: Cache markdowns2 $GITHUB_WORKSPACE/markdowns2/node_modules
+        uses: actions/cache@v1
+        with:
+          path: $GITHUB_WORKSPACE/markdowns2/node_modules
+          key: ${{ runner.os }}-nodejs-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nodejs-
+            ${{ runner.os }}-
+      - name: Build markdowns2 app
+        run: |
+          cd $GITHUB_WORKSPACE/markdowns2 && npm i -E
+          cd $GITHUB_WORKSPACE/markdowns2 && npm build
+  markdowns:
+    strategy:
+      matrix:
+        java: [11]
+        os: [ubuntu-latest]
+        nodejs-version: [12]
+    name: markdowns with nodejs ${{ matrix.nodejs-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Git clone
+        uses: actions/checkout@v1
+      - name: Install curl
+        run: sudo apt-get install -y curl
+      - name: Setup NodeJS ${{ matrix.nodejs-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.nodejs-version }}
+      - name: Cache npm ${{ matrix.nodejs-version }} deps
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ matrix.os }}-npm-
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.os }}-npm-
+      - name: Install npm apps (wait-port)
+        run: npm install -g wait-port
+      - name: Cache markdowns $GITHUB_WORKSPACE/markdowns/node_modules
+        uses: actions/cache@v1
+        with:
+          path: $GITHUB_WORKSPACE/markdowns/node_modules
+          key: ${{ runner.os }}-nodejs-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nodejs-
+            ${{ runner.os }}-
+      - name: Build markdowns app
+        run: |
+          cd $GITHUB_WORKSPACE/markdowns && npm i -E
+          cd $GITHUB_WORKSPACE/markdowns && npm build
+  yaml:
+    strategy:
+      matrix:
+        java: [11]
+        os: [ubuntu-latest]
+        nodejs-version: [12]
+    name: yaml with nodejs ${{ matrix.nodejs-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Git clone
+        uses: actions/checkout@v1
+      - name: Install curl
+        run: sudo apt-get install -y curl
+      - name: Setup NodeJS ${{ matrix.nodejs-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.nodejs-version }}
+      - name: Cache npm ${{ matrix.nodejs-version }} deps
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ matrix.os }}-npm-
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.os }}-npm-
+      - name: Install npm apps (wait-port)
+        run: npm install -g wait-port
+      - name: Cache yaml $GITHUB_WORKSPACE/yaml/node_modules
+        uses: actions/cache@v1
+        with:
+          path: $GITHUB_WORKSPACE/yaml/node_modules
+          key: ${{ runner.os }}-nodejs-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nodejs-
+            ${{ runner.os }}-
+      - name: Build yaml app
+        run: |
+          cd $GITHUB_WORKSPACE/yaml && npm i -E
+          cd $GITHUB_WORKSPACE/yaml && npm build
+  vue:
+    strategy:
+      matrix:
+        java: [11]
+        os: [ubuntu-latest]
+        nodejs-version: [12]
+    name: vue with nodejs ${{ matrix.nodejs-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Git clone
+        uses: actions/checkout@v1
+      - name: Install curl
+        run: sudo apt-get install -y curl
+      - name: Setup NodeJS ${{ matrix.nodejs-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.nodejs-version }}
+      - name: Cache npm ${{ matrix.nodejs-version }} deps
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ matrix.os }}-npm-
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.os }}-npm-
+      - name: Install npm apps (wait-port)
+        run: npm install -g wait-port
+      - name: Cache vue $GITHUB_WORKSPACE/vue/node_modules
+        uses: actions/cache@v1
+        with:
+          path: $GITHUB_WORKSPACE/vue/node_modules
+          key: ${{ runner.os }}-nodejs-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nodejs-
+            ${{ runner.os }}-
+      - name: Build vue app
+        run: |
+          cd $GITHUB_WORKSPACE/vue && npm i -E
+          cd $GITHUB_WORKSPACE/vue && npm build
+  preact:
+    strategy:
+      matrix:
+        java: [11]
+        os: [ubuntu-latest]
+        nodejs-version: [12]
+    name: preact with nodejs ${{ matrix.nodejs-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Git clone
+        uses: actions/checkout@v1
+      - name: Install curl
+        run: sudo apt-get install -y curl
+      - name: Setup NodeJS ${{ matrix.nodejs-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.nodejs-version }}
+      - name: Cache npm ${{ matrix.nodejs-version }} deps
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ matrix.os }}-npm-
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.os }}-npm-
+      - name: Install npm apps (wait-port)
+        run: npm install -g wait-port
+      - name: Cache preact $GITHUB_WORKSPACE/preact/node_modules
+        uses: actions/cache@v1
+        with:
+          path: $GITHUB_WORKSPACE/preact/node_modules
+          key: ${{ runner.os }}-nodejs-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nodejs-
+            ${{ runner.os }}-
+      - name: Build preact app
+        run: |
+          cd $GITHUB_WORKSPACE/preact && npm i -E
+          cd $GITHUB_WORKSPACE/preact && npm build
