@@ -28,6 +28,6 @@
   "dependencies": {
     "angular": "1.7.6",
     "angular-ui-router": "1.0.20",
-    "marked": "0.6.0"
+    "marked": "0.8.0"
   }
 }
