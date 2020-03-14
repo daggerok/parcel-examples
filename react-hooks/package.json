@@ -1,0 +1,40 @@
+{
+  "scripts": {
+    "dev": "parcel src/index.html --no-cache",
+    "build": "parcel build src/index.html --no-cache",
+    "start": "pm2 start 'npm run dev' --name app",
+    "restart": "pm2 restart app",
+    "stop": "pm2 kill",
+    "logs": "pm2 logs"
+  },
+  "name": "react-hooks-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [
+    "rpm2",
+    "react",
+    "parcel",
+    "parcel-bundler"
+  ],
+  "author": "Maksim Kostromin <daggerok@gmail.com> (https://github.com/daggerok)",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "parcel-bundler": "1.12.4",
+    "pm2": "4.2.3"
+  },
+  "dependencies": {
+    "babel-polyfill": "6.26.0",
+    "react": "16.13.0",
+    "react-dom": "16.13.0"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  }
+}
