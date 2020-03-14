@@ -1,93 +1,96 @@
-language: java
-jdk: oraclejdk8
-
+python: 3.8
+jdk: openjdk8
 language: node_js
 node_js: lts/*
-
-addons:
-  apt:
-    update: true
-
+os: linux
+arch: amd64
 install: true
-script:
-- export root=$(pwd)
-#
-- cd $root/basic
-- npm i
-- npm run build
-#
-- cd $root/rxts
-- npm i
-- npm run build
-#
-- cd $root/ts
-- npm i
-- npm run build
-#
-- cd $root/babel-stage-0
-- npm i
-- npm run build
-#
-- cd $root/react
-- npm i
-- npm run build
-#
-- cd $root/preact
-- npm i
-- npm run build
-#
-- cd $root/vue
-- npm i
-- npm run build
-#
-- cd $root/yaml
-- npm i
-- npm run build
-  ## not worked
-  #- cd $root/markdown
-  #- npm i
-  #- npm run build
-#
-- cd $root/markdowns
-- npm i
-- npm run build
-#
-- cd $root/markdowns2
-- npm i
-- npm run build
-#
-- cd $root/angularjs
-- npm i
-- npm run build
-#
-- cd $root/react-bootstrap
-- npm i
-- npm run build
-#
-- cd $root/sass-bootstrap
-- npm i
-- npm run build
-
-before_deploy:
-- cd $root/
-- ./mvnw -Pdocs
-
-env:
-  global:
-  - TERM=dumb
-  - secure: KdBWS9LXirk9AYp6Db8Qc/1KFaQc1TB/C//s9XJj6agNnCQqIHH2jQWZp9/hTN6AGreDS2FO4Qn5DmeLzYYS+nDjSPluO46lJO/RevAmO3LdRPW1fIElw13AI9FqVgxv/kFWPazBhsKO1Bf2lWwQHugbVUPIlKuzIXPGU/018SOJZDVZnwfclgoizEvqnvpcOkDLNVeKxF7iSfgmWS8AG4ygMam9I1dmaLST3MDqZSf+3lI9CJuJ6kqW5DcJoQnwVpXkoAs+W61HDqlsUOsvr68KeiNqNIKdJB3fEAcF3YpGdYhl+pwZHXfR77qPE7c/D4q5n/oc/XboAmeXbSllB+IIVghMdsQtQGDZ7QvywAwB6wHl4liDusgGoTNGYKjqNL5B7k702AbyYVkyq6dH7c6ZTu6x3mTh/dmNvVa1XhSmUw1DZUAQBnlbMkb/0XLwMacU9OVq/jSuSDYkBivQCFe7Eyy2tmFYObQLmmRTvxFGzNmp/BZw+OLfKuBCCdaHpZaB+fRe2PVa/bjhT2Ue+giTD1Kzxg2md/9qogRYUo9MAO3kH160Bo6xhNuGHJMMrYj8tBvOaVsABqGmWcsyY83UIAseIpFKeegREjxt5M81f7cHNPRcBYL8hbK9eK1OCUJSg7ATE/qrJp4z+tVwqpx0IF1JvVy7istURu64eyY=
-
-deploy:
-  provider: pages
-  skip-cleanup: true
-  # travis encrypt GITHUB_TOKEN=<your github repo token> --add
-  github-token: "$GITHUB_TOKEN"
-  keep-history: true
-  on:
-    branch: master
-  local-dir: target/generated-docs
-  target_branch: gh-pages
-
+jobs:
+  include:
+    - stage: test
+      name: basic
+      script:
+      - cd $TRAVIS_BUILD_DIR/basic && npm i
+      - cd $TRAVIS_BUILD_DIR/basic && npm run build
+    - stage: test
+      name: rxts
+      script:
+      - cd $TRAVIS_BUILD_DIR/rxts && npm i
+      - cd $TRAVIS_BUILD_DIR/rxts && npm run build
+    - stage: test
+      name: ts
+      script:
+      - cd $TRAVIS_BUILD_DIR/ts && npm i
+      - cd $TRAVIS_BUILD_DIR/ts && npm run build
+    - stage: test
+      name: babel-stage-0
+      script:
+      - cd $TRAVIS_BUILD_DIR/babel-stage-0 && npm i
+      - cd $TRAVIS_BUILD_DIR/babel-stage-0 && npm run build
+    - stage: test
+      name: react
+      script:
+      - cd $TRAVIS_BUILD_DIR/react && npm i
+      - cd $TRAVIS_BUILD_DIR/react && npm run build
+    - stage: test
+      name: preact
+      script:
+      - cd $TRAVIS_BUILD_DIR/preact && npm i
+      - cd $TRAVIS_BUILD_DIR/preact && npm run build
+    - stage: test
+      name: vue
+      script:
+      - cd $TRAVIS_BUILD_DIR/vue && npm i
+      - cd $TRAVIS_BUILD_DIR/vue && npm run build
+    - stage: test
+      name: yaml
+      script:
+      - cd $TRAVIS_BUILD_DIR/yaml && npm i
+      - cd $TRAVIS_BUILD_DIR/yaml && npm run build
+      ## not worked
+      #- cd $TRAVIS_BUILD_DIR/markdown && npm i
+      #- cd $TRAVIS_BUILD_DIR/markdown && npm run build
+    - stage: test
+      name: markdowns
+      script:
+      - cd $TRAVIS_BUILD_DIR/markdowns && npm i
+      - cd $TRAVIS_BUILD_DIR/markdowns && npm run build
+    - stage: test
+      name: markdowns2
+      script:
+      - cd $TRAVIS_BUILD_DIR/markdowns2 && npm i
+      - cd $TRAVIS_BUILD_DIR/markdowns2 && npm run build
+    - stage: test
+      name: angularjs
+      script:
+      - cd $TRAVIS_BUILD_DIR/angularjs && npm i
+      - cd $TRAVIS_BUILD_DIR/angularjs && npm run build
+    - stage: test
+      name: react-bootstrap
+      script:
+      - cd $TRAVIS_BUILD_DIR/react-bootstrap && npm i
+      - cd $TRAVIS_BUILD_DIR/react-bootstrap && npm run build
+    - stage: test
+      name: sass-bootstrap
+      script:
+      - cd $TRAVIS_BUILD_DIR/sass-bootstrap && npm i
+      - cd $TRAVIS_BUILD_DIR/sass-bootstrap && npm run build
+    - stage: deploy
+      script: skip
+      before_deploy:
+      - cd $TRAVIS_BUILD_DIR && ./mvnw -Pdocs
+      env:
+        - secure: KdBWS9LXirk9AYp6Db8Qc/1KFaQc1TB/C//s9XJj6agNnCQqIHH2jQWZp9/hTN6AGreDS2FO4Qn5DmeLzYYS+nDjSPluO46lJO/RevAmO3LdRPW1fIElw13AI9FqVgxv/kFWPazBhsKO1Bf2lWwQHugbVUPIlKuzIXPGU/018SOJZDVZnwfclgoizEvqnvpcOkDLNVeKxF7iSfgmWS8AG4ygMam9I1dmaLST3MDqZSf+3lI9CJuJ6kqW5DcJoQnwVpXkoAs+W61HDqlsUOsvr68KeiNqNIKdJB3fEAcF3YpGdYhl+pwZHXfR77qPE7c/D4q5n/oc/XboAmeXbSllB+IIVghMdsQtQGDZ7QvywAwB6wHl4liDusgGoTNGYKjqNL5B7k702AbyYVkyq6dH7c6ZTu6x3mTh/dmNvVa1XhSmUw1DZUAQBnlbMkb/0XLwMacU9OVq/jSuSDYkBivQCFe7Eyy2tmFYObQLmmRTvxFGzNmp/BZw+OLfKuBCCdaHpZaB+fRe2PVa/bjhT2Ue+giTD1Kzxg2md/9qogRYUo9MAO3kH160Bo6xhNuGHJMMrYj8tBvOaVsABqGmWcsyY83UIAseIpFKeegREjxt5M81f7cHNPRcBYL8hbK9eK1OCUJSg7ATE/qrJp4z+tVwqpx0IF1JvVy7istURu64eyY=
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        keep-history: true
+        target_branch: gh-pages
+        github-token: "$GITHUB_TOKEN"
+        # travis encrypt GITHUB_TOKEN=...
+        local-dir: "$TRAVIS_BUILD_DIR/target/generated-docs"
+        on:
+          branch: master
 cache:
   directories:
   - $HOME/.m2
