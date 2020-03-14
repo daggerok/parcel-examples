@@ -32,49 +32,49 @@ jobs:
       script:
       - cd $TRAVIS_BUILD_DIR/react && npm i
       - cd $TRAVIS_BUILD_DIR/react && npm run build
-    - stage: test
-      name: preact
-      script:
-      - cd $TRAVIS_BUILD_DIR/preact && npm i
-      - cd $TRAVIS_BUILD_DIR/preact && npm run build
-    - stage: test
-      name: vue
-      script:
-      - cd $TRAVIS_BUILD_DIR/vue && npm i
-      - cd $TRAVIS_BUILD_DIR/vue && npm run build
-    - stage: test
-      name: yaml
-      script:
-      - cd $TRAVIS_BUILD_DIR/yaml && npm i
-      - cd $TRAVIS_BUILD_DIR/yaml && npm run build
-      ## not worked
-      #- cd $TRAVIS_BUILD_DIR/markdown && npm i
-      #- cd $TRAVIS_BUILD_DIR/markdown && npm run build
-    - stage: test
-      name: markdowns
-      script:
-      - cd $TRAVIS_BUILD_DIR/markdowns && npm i
-      - cd $TRAVIS_BUILD_DIR/markdowns && npm run build
-    - stage: test
-      name: markdowns2
-      script:
-      - cd $TRAVIS_BUILD_DIR/markdowns2 && npm i
-      - cd $TRAVIS_BUILD_DIR/markdowns2 && npm run build
-    - stage: test
-      name: angularjs
-      script:
-      - cd $TRAVIS_BUILD_DIR/angularjs && npm i
-      - cd $TRAVIS_BUILD_DIR/angularjs && npm run build
-    - stage: test
-      name: react-bootstrap
-      script:
-      - cd $TRAVIS_BUILD_DIR/react-bootstrap && npm i
-      - cd $TRAVIS_BUILD_DIR/react-bootstrap && npm run build
-    - stage: test
-      name: sass-bootstrap
-      script:
-      - cd $TRAVIS_BUILD_DIR/sass-bootstrap && npm i
-      - cd $TRAVIS_BUILD_DIR/sass-bootstrap && npm run build
+    #- stage: test
+    #  name: preact
+    #  script:
+    #  - cd $TRAVIS_BUILD_DIR/preact && npm i
+    #  - cd $TRAVIS_BUILD_DIR/preact && npm run build
+    #- stage: test
+    #  name: vue
+    #  script:
+    #  - cd $TRAVIS_BUILD_DIR/vue && npm i
+    #  - cd $TRAVIS_BUILD_DIR/vue && npm run build
+    #- stage: test
+    #  name: yaml
+    #  script:
+    #  - cd $TRAVIS_BUILD_DIR/yaml && npm i
+    #  - cd $TRAVIS_BUILD_DIR/yaml && npm run build
+    #  ## not worked
+    #  #- cd $TRAVIS_BUILD_DIR/markdown && npm i
+    #  #- cd $TRAVIS_BUILD_DIR/markdown && npm run build
+    #- stage: test
+    #  name: markdowns
+    #  script:
+    #  - cd $TRAVIS_BUILD_DIR/markdowns && npm i
+    #  - cd $TRAVIS_BUILD_DIR/markdowns && npm run build
+    #- stage: test
+    #  name: markdowns2
+    #  script:
+    #  - cd $TRAVIS_BUILD_DIR/markdowns2 && npm i
+    #  - cd $TRAVIS_BUILD_DIR/markdowns2 && npm run build
+    #- stage: test
+    #  name: angularjs
+    #  script:
+    #  - cd $TRAVIS_BUILD_DIR/angularjs && npm i
+    #  - cd $TRAVIS_BUILD_DIR/angularjs && npm run build
+    #- stage: test
+    #  name: react-bootstrap
+    #  script:
+    #  - cd $TRAVIS_BUILD_DIR/react-bootstrap && npm i
+    #  - cd $TRAVIS_BUILD_DIR/react-bootstrap && npm run build
+    #- stage: test
+    #  name: sass-bootstrap
+    #  script:
+    #  - cd $TRAVIS_BUILD_DIR/sass-bootstrap && npm i
+    #  - cd $TRAVIS_BUILD_DIR/sass-bootstrap && npm run build
     - stage: deploy
       script: skip
       before_deploy:
@@ -91,6 +91,7 @@ jobs:
         local-dir: "$TRAVIS_BUILD_DIR/target/generated-docs"
         on:
           branch: master
+          condition: "$TRAVIS_PULL_REQUEST = false"
 cache:
   directories:
   - $HOME/.m2
