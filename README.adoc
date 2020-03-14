@@ -1,4 +1,4 @@
-= parcel-examples image:https://travis-ci.org/daggerok/parcel-examples.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/parcel-examples"]
+= parcel-examples image:https://github.com/daggerok/parcel-examples/workflows/GitHub%20actions%20workflows/badge.svg["Build Status", link="https://github.com/daggerok/parcel-examples/actions?query=workflow%3A%22GitHub+actions+workflows%22"] image:https://travis-ci.org/daggerok/parcel-examples.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/parcel-examples"]
 
 //tag::content[]
 
