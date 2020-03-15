@@ -15,19 +15,19 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
-    "@types/angular": "1.6.53",
-    "@types/node": "10.12.18",
+    "@types/angular": "1.6.57",
+    "@types/node": "13.9.1",
     "babel-core": "^6.26.3",
     "babel-preset-env": "1.7.0",
     "babel-preset-stage-0": "6.24.1",
     "npm-run-all": "4.1.5",
-    "parcel-bundler": "1.11.0",
-    "rimraf": "2.6.3",
-    "serve": "10.1.1"
+    "parcel-bundler": "1.12.4",
+    "rimraf": "3.0.2",
+    "serve": "11.3.0"
   },
   "dependencies": {
     "angular": "1.7.9",
-    "angular-ui-router": "1.0.20",
-    "marked": "0.6.0"
+    "angular-ui-router": "1.0.25",
+    "marked": "0.8.0"
   }
 }
