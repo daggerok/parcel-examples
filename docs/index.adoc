@@ -392,6 +392,16 @@ include::../sass-bootstrap/src/styles.scss[tags=bootstrap]
 
 done.
 
+=== react-hooks
+
+.edit file `app.js`:
+[source, js]
+----
+include::../react-hooks/src/app.js[]
+----
+
+done.
+
 == Links
 
 - link:https://parceljs.org/[parcel]
