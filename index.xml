@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2020-03-15 01:23:34 UTC</date>
+<date>2020-03-15 01:26:13 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2020-03-15 01:23:34 UTC</date>
+<date>2020-03-15 01:26:13 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -792,6 +792,33 @@ mv src/styles.css src/styles.scss
 <para>
 <programlisting language="scss" linenumbering="unnumbered">@import "./variables.scss";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";</programlisting>
+</para>
+</formalpara>
+<simpara>done.</simpara>
+</section>
+<section xml:id="react-hooks">
+<title>react-hooks</title>
+<formalpara>
+<title>edit file <literal>app.js</literal>:</title>
+<para>
+<programlisting language="js" linenumbering="unnumbered">import 'babel-polyfill';
+import { render } from 'react-dom';
+import React, { useState } from 'react';
+
+function App() {
+  const [message, setMessage] = useState('Hello');
+  const reversed = str =&gt; str.split('').reverse().join('');
+  const toggleReverse = () =&gt; setMessage(reversed(message));
+
+  return &lt;h1 onClick={toggleReverse}&gt;
+    { message } 📦 🚀
+  &lt;/h1&gt;
+}
+
+render(
+  &lt;App/&gt;,
+  document.querySelector('#app')
+);</programlisting>
 </para>
 </formalpara>
 <simpara>done.</simpara>

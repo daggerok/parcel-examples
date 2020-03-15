@@ -467,7 +467,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2020-03-15 01:23:34 UTC</span>
+<span id="revdate">2020-03-15 01:26:13 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -488,6 +488,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#typescript">2.11. typescript</a></li>
 <li><a href="#rx-js-typescript">2.12. rx.js + typescript</a></li>
 <li><a href="#bootstrap-scss">2.13. bootstrap.scss</a></li>
+<li><a href="#react-hooks">2.14. react-hooks</a></li>
 </ul>
 </li>
 <li><a href="#links">3. Links</a></li>
@@ -1324,6 +1325,35 @@ mv src/styles.css src/styles.scss
 <p>done.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="react-hooks"><a class="anchor" href="#react-hooks"></a>2.14. react-hooks</h3>
+<div class="listingblock">
+<div class="title">edit file <code>app.js</code>:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">import 'babel-polyfill';
+import { render } from 'react-dom';
+import React, { useState } from 'react';
+
+function App() {
+  const [message, setMessage] = useState('Hello');
+  const reversed = str =&gt; str.split('').reverse().join('');
+  const toggleReverse = () =&gt; setMessage(reversed(message));
+
+  return &lt;h1 onClick={toggleReverse}&gt;
+    { message } 📦 🚀
+  &lt;/h1&gt;
+}
+
+render(
+  &lt;App/&gt;,
+  document.querySelector('#app')
+);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>done.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1376,7 +1406,7 @@ mv src/styles.css src/styles.scss
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2020-03-15 01:23:34 UTC
+Last updated 2020-03-15 01:26:13 UTC
 </div>
 </div>
 <!-- jquery -->
