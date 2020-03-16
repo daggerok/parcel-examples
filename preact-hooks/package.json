@@ -1,0 +1,41 @@
+{
+  "scripts": {
+    "dev": "parcel src/index.html --no-cache",
+    "build": "parcel build src/index.html --no-cache",
+    "start": "pm2 start 'npm run dev' --name app",
+    "restart": "pm2 restart app",
+    "stop": "pm2 kill",
+    "logs": "pm2 logs"
+  },
+  "name": "preact-hooks-app",
+  "version": "1.0.0",
+  "main": "./src/app.js",
+  "keywords": [
+    "pm2",
+    "preact",
+    "parcel",
+    "parcel-bundler"
+  ],
+  "author": "Maksim Kostromin <daggerok@gmail.com> (https://github.com/daggerok)",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "babel-preset-preact": "2.0.0",
+    "parcel-bundler": "1.12.4",
+    "parcel-plugin-static-files-copy": "2.3.1",
+    "pm2": "4.2.3"
+  },
+  "dependencies": {
+    "preact": "10.3.4"
+  },
+  "staticFiles": {
+    "staticPath": "./src/public",
+    "watcherGlob": "**"
+  },
+  "babel": {
+    "presets": [
+      "preact"
+    ]
+  }
+}

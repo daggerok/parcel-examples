@@ -402,6 +402,16 @@ include::../react-hooks/src/app.js[]
 
 done.
 
+=== preact-hooks
+
+.edit file `app.js`:
+[source, js]
+----
+include::../preact-hooks/src/app.js[]
+----
+
+done.
+
 == Links
 
 - link:https://parceljs.org/[parcel]

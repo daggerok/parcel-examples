@@ -5,12 +5,16 @@
 - plain javascript
 - typescript
 - es next using babel
+- rx
 - vue
 - react
 - preact
 - angularjs
 - yaml
 - markdown
+- bootstrap
+- react-hooks
+- preact-hooks
 - and many more!
 
 Read link:https://daggerok.github.io/parcel-examples[reference documentation]
