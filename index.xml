@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2020-03-15 01:26:13 UTC</date>
+<date>2020-03-16 02:16:54 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2020-03-15 01:26:13 UTC</date>
+<date>2020-03-16 02:16:54 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -44,6 +44,9 @@
 <simpara>es next using babel</simpara>
 </listitem>
 <listitem>
+<simpara>rx</simpara>
+</listitem>
+<listitem>
 <simpara>vue</simpara>
 </listitem>
 <listitem>
@@ -60,6 +63,15 @@
 </listitem>
 <listitem>
 <simpara>markdown</simpara>
+</listitem>
+<listitem>
+<simpara>bootstrap</simpara>
+</listitem>
+<listitem>
+<simpara>react-hooks</simpara>
+</listitem>
+<listitem>
+<simpara>preact-hooks</simpara>
 </listitem>
 <listitem>
 <simpara>and many more!</simpara>
@@ -818,6 +830,37 @@ function App() {
 render(
   &lt;App/&gt;,
   document.querySelector('#app')
+);</programlisting>
+</para>
+</formalpara>
+<simpara>done.</simpara>
+</section>
+<section xml:id="preact-hooks">
+<title>preact-hooks</title>
+<formalpara>
+<title>edit file <literal>app.js</literal>:</title>
+<para>
+<programlisting language="js" linenumbering="unnumbered">import { h, render } from 'preact';
+import { useState } from 'preact/hooks';
+
+function App() {
+  const [message, setMessage] = useState('Hello');
+  const reversed = str =&gt; str.split('').reverse().join('');
+  const toggleReverse = () =&gt; setMessage(reversed(message));
+
+  return &lt;h1 onClick={toggleReverse}&gt;
+    { message } 📦 🚀
+  &lt;/h1&gt;
+}
+
+render(
+  &lt;h1&gt;Loading...&lt;/h1&gt;,
+  document.querySelector('#app')
+);
+
+render(
+  &lt;App/&gt;,
+  document.getElementById('app')
 );</programlisting>
 </para>
 </formalpara>
