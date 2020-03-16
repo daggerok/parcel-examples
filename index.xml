@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2020-03-16 02:16:54 UTC</date>
+<date>2020-03-16 02:41:53 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2020-03-16 02:16:54 UTC</date>
+<date>2020-03-16 02:41:53 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -842,6 +842,7 @@ render(
 <para>
 <programlisting language="js" linenumbering="unnumbered">import { h, render } from 'preact';
 import { useState } from 'preact/hooks';
+import React from 'preact/compat';
 
 function App() {
   const [message, setMessage] = useState('Hello');
@@ -854,13 +855,8 @@ function App() {
 }
 
 render(
-  &lt;h1&gt;Loading...&lt;/h1&gt;,
-  document.querySelector('#app')
-);
-
-render(
   &lt;App/&gt;,
-  document.getElementById('app')
+  document.querySelector('#app')
 );</programlisting>
 </para>
 </formalpara>
