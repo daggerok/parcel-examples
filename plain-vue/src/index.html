@@ -15,7 +15,10 @@
     <img :src="product.image" alt="">
   </div>
   <div class="product-info">
-    <p>{{ product.name }}</p>
+    <h1>{{ product.name }}</h1>
+    <p v-if="product.quantity > 0 && product.quantity < 10">Almost sold!</p>
+    <p v-else-if="product.quantity > 0">In stock</p>
+    <p v-else>Out of stock...</p>
   </div>
 </div>
 <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>

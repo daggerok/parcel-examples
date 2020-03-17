@@ -7,7 +7,7 @@ const app = new Vue({
       name: 'Socks',
       // image: '/assets/vmSocks-green-onWhite.jpg',
       image: './assets/vmSocks-green-onWhite.jpg',
-      quantity: 100,
+      quantity: 99,
     },
   },
 });
