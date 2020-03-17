@@ -30,7 +30,14 @@
     "sass": "1.26.3"
   },
   "staticFiles": {
-    "staticPath": "./src/assets",
-    "watcherGlob": "**"
+    "staticPath": [
+      {
+        "staticPath": "./src/assets",
+        "staticOutDir": "assets"
+      }
+    ]
+  },
+  "dependencies": {
+    "vue": "2.6.11"
   }
 }
