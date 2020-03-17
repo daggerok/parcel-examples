@@ -12,7 +12,12 @@
   "main": "index.js",
   "keywords": [
     "vue",
-    "parcel"
+    "pm2",
+    "scss",
+    "sass",
+    "parcel",
+    "fortawesome",
+    "parcel-plugin-static-files-copy"
   ],
   "author": "Maksim Kostromin <daggerok@gmail.com> (https://github.com/daggerok)",
   "license": "MIT",
