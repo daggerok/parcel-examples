@@ -1,7 +1,11 @@
-import Vue from 'vue';
-import App from './App';
-
-new Vue({
+const Vue = window.Vue;
+const app = new Vue({
   el: '#app',
-  render: h => h(App),
+  data: {
+    product: {
+      name: 'Socks',
+      image: 'vmSocks-green-onWhite.jpg',
+      quantity: 100,
+    }
+  },
 });

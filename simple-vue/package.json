@@ -7,7 +7,7 @@
     "stop": "pm2 kill",
     "logs": "pm2 logs"
   },
-  "name": "plain-vue-app",
+  "name": "simple-vue-app",
   "version": "1.0.0",
   "main": "index.js",
   "keywords": [
@@ -21,16 +21,29 @@
   ],
   "author": "Maksim Kostromin <daggerok@gmail.com> (https://github.com/daggerok)",
   "license": "MIT",
-  "description": "plain Vue app",
+  "description": "Simple Vue app",
   "devDependencies": {
+    "@babel/core": "7.8.7",
     "@fortawesome/fontawesome-free": "5.12.1",
+    "@vue/component-compiler-utils": "3.1.1",
+    "babel-preset-vue": "2.0.2",
     "parcel-bundler": "1.12.4",
     "parcel-plugin-static-files-copy": "2.3.1",
     "pm2": "4.2.3",
-    "sass": "1.26.3"
+    "sass": "1.26.3",
+    "vue-template-compiler": "2.6.11"
+  },
+  "dependencies": {
+    "vue": "2.6.11",
+    "vue-hot-reload-api": "2.3.4"
   },
   "staticFiles": {
     "staticPath": "./src/assets",
     "watcherGlob": "**"
+  },
+  "babel": {
+    "presets": [
+      "vue"
+    ]
   }
 }

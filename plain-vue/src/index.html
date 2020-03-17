@@ -6,9 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Plain minimal Vue | Parcel</title>
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/global.scss">
 </head>
 <body>
-<div id="app"></div>
+<nav>my app</nav>
+<div id="app">
+  <div class="product-image">
+    <img :src="product.image" alt="">
+  </div>
+  <div class="product-info">
+    <p>{{ product.name }}</p>
+  </div>
+</div>
+<script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script src="./main.js"></script>
 </body>
 </html>
