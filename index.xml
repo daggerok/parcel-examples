@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2020-03-21 16:51:48 UTC</date>
+<date>2020-03-21 17:08:34 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2020-03-21 16:51:48 UTC</date>
+<date>2020-03-21 17:08:34 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -864,6 +864,60 @@ render(
 </section>
 <section xml:id="react-hooks-typescript">
 <title>react-hooks-typescript</title>
+<formalpara>
+<title>install packages</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">npm i -ED parcel-bundler parcel-plugin-static-files-copy scss
+npm i -ED typescript @types/node @types/react @types/react-dom
+npm i -ED babel-core babel-preset-env babel-preset-react @babel/preset-typescript
+npm i -E react react-dom</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>key <literal>package.json</literal> features:</title>
+<para>
+<programlisting language="json" linenumbering="unnumbered">{
+  "name": "react-hooks-ts-app",
+  "main": "./src/index.html",
+  "devDependencies": {
+    "@babel/preset-typescript": "7.9.0",
+    "@types/node": "13.9.2",
+    "@types/react": "16.9.25",
+    "@types/react-dom": "16.9.5",
+    "babel-core": "6.26.3",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "parcel-bundler": "1.12.4",
+    "parcel-plugin-static-files-copy": "2.3.1",
+    "pm2": "4.2.3",
+    "sass": "1.26.3",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "staticFiles": {
+    "staticPath": "./src/public",
+    "watcherGlob": "**"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "scripts": {
+    "dev": "parcel src/index.html --no-cache",
+    "build": "parcel build src/index.html --no-cache",
+    "start": "pm2 start 'npm run dev' --name app",
+    "restart": "pm2 restart app",
+    "stop": "pm2 kill",
+    "logs": "pm2 logs"
+  }
+}</programlisting>
+</para>
+</formalpara>
 <formalpara>
 <title>edit file <literal>components/App.tsx</literal>:</title>
 <para>
