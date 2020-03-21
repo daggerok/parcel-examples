@@ -394,7 +394,7 @@ done.
 
 === react-hooks
 
-.edit file `app.js`:
+.edit file `main.tsx`:
 [source, js]
 ----
 include::../react-hooks/src/app.js[]
@@ -408,6 +408,76 @@ done.
 [source, js]
 ----
 include::../preact-hooks/src/app.js[]
+----
+
+done.
+
+=== react-hooks-typescript
+
+.install packages
+[source, bash]
+----
+npm i -ED parcel-bundler parcel-plugin-static-files-copy scss
+npm i -ED typescript @types/node @types/react @types/react-dom
+npm i -ED babel-core babel-preset-env babel-preset-react @babel/preset-typescript
+npm i -E react react-dom
+----
+
+.key `package.json` features:
+[source, json]
+----
+{
+  "name": "react-hooks-ts-app",
+  "main": "./src/index.html",
+  "devDependencies": {
+    "@babel/preset-typescript": "7.9.0",
+    "@types/node": "13.9.2",
+    "@types/react": "16.9.25",
+    "@types/react-dom": "16.9.5",
+    "babel-core": "6.26.3",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "parcel-bundler": "1.12.4",
+    "parcel-plugin-static-files-copy": "2.3.1",
+    "pm2": "4.2.3",
+    "sass": "1.26.3",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "staticFiles": {
+    "staticPath": "./src/public",
+    "watcherGlob": "**"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "scripts": {
+    "dev": "parcel src/index.html --no-cache",
+    "build": "parcel build src/index.html --no-cache",
+    "start": "pm2 start 'npm run dev' --name app",
+    "restart": "pm2 restart app",
+    "stop": "pm2 kill",
+    "logs": "pm2 logs"
+  }
+}
+----
+
+.edit file `components/App.tsx`:
+[source, ts]
+----
+include::../react-hooks-ts/src/components/App.tsx[]
+----
+
+.edit file `main.tsx`:
+[source, ts]
+----
+include::../react-hooks-ts/src/main.tsx[]
 ----
 
 done.
