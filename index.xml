@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2020-03-21 20:38:07 UTC</date>
+<date>2020-03-21 20:42:13 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2020-03-21 20:38:07 UTC</date>
+<date>2020-03-21 20:42:13 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -949,19 +949,23 @@ const { render } = ReactDOM;
 
 render(
   &lt;React.Fragment&gt;
-    &lt;p&gt;app:&lt;/p&gt;&lt;br/&gt;
+    &lt;p&gt;app:&lt;/p&gt;
     &lt;App/&gt;
+    &lt;br/&gt;
 
-    &lt;p&gt;useState app:&lt;/p&gt;&lt;br/&gt;
+    &lt;p&gt;useState app:&lt;/p&gt;
     &lt;UseStateApp/&gt;
+    &lt;br/&gt;
 
-    &lt;p&gt;Provider useContext app:&lt;/p&gt;&lt;br/&gt;
+    &lt;p&gt;Provider useContext app:&lt;/p&gt;
     &lt;StoreProvider&gt;
       &lt;UseContextStoreApp/&gt;
     &lt;/StoreProvider&gt;
+    &lt;br/&gt;
 
-    &lt;p&gt;useReducer app:&lt;/p&gt;&lt;br/&gt;
+    &lt;p&gt;useReducer app:&lt;/p&gt;
     &lt;UseReducerApp /&gt;
+    &lt;br/&gt;
   &lt;/React.Fragment&gt;,
   document.querySelector('#app')
 );</programlisting>
