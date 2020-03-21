@@ -44,10 +44,10 @@ npm i -D parcel-bundler
 mkdir -p src
 touch src/index.html
 touch src/styles.css
-touch src/main.js
+touch src/main.tsx
 ----
 
-.main.js
+.main.tsx
 [source,javascript]
 ----
 include::../basic/src/main.js[]
@@ -127,7 +127,7 @@ echo '{"presets":["env","react"]}' > .babelrc
 include::../react/src/components/echo-ehlo.js[]
 ----
 
-.and update code in `src/main.js` file:
+.and update code in `src/main.tsx` file:
 [source,javascript]
 ----
 include::../react/src/main.js[tags=content]
@@ -179,13 +179,13 @@ npm i -D babel-preset-vue @vue/component-compiler-utils vue-template-compiler
 echo '{"presets":["env","vue"]}' > .babelrc
 ----
 
-.add vue component file: `App.vue`
+.add vue component file: `AppUseState.vue`
 [source,html]
 ----
 include::../vue/src/components/App.vue[]
 ----
 
-.main.js
+.main.tsx
 [source,javascript]
 ----
 include::../vue/src/main.js[tags=content]
@@ -207,7 +207,7 @@ npm i -ES js-yaml
 include::../yaml/src/app.yaml[]
 ----
 
-.main.js
+.main.tsx
 [source,javascript]
 ----
 include::../yaml/src/main.js[tags=content]
@@ -229,7 +229,7 @@ npm i -ED parcel-plugin-markdown
 include::../markdown/src/app.md[]
 ----
 
-.main.js
+.main.tsx
 [source,javascript]
 ----
 include::../markdown/src/main.js[tags=content]
@@ -256,7 +256,7 @@ markdowns2/src/posts/
             └── 02-bash.md
 ----
 
-.`main.js` implementation:
+.`main.tsx` implementation:
 [source,javascript]
 ----
 include::../markdowns2/src/main.js[tags=content]
@@ -272,7 +272,7 @@ with no comments - I tired....
 include::../angularjs/src/index.html[]
 ----
 
-.Main application bootstrap entrypoint: `./src/main.js`
+.Main application bootstrap entrypoint: `./src/main.tsx`
 [source,js]
 ----
 include::../angularjs/src/main.js[tags=content]
@@ -290,25 +290,25 @@ include::../angularjs/src/app/index.js[]
 include::../angularjs/src/app/components/index.js[]
 ----
 
-.App module config: `./src/app/components/app/index.js`
+.AppUseState module config: `./src/app/components/app/index.js`
 [source,js]
 ----
 include::../angularjs/src/app/components/app/index.js[]
 ----
 
-.App component config: `./src/app/components/app/config.js`
+.AppUseState component config: `./src/app/components/app/config.js`
 [source,js]
 ----
 include::../angularjs/src/app/components/app/config.js[]
 ----
 
-.App component: `./src/app/components/app/component.js`
+.AppUseState component: `./src/app/components/app/component.js`
 [source,js]
 ----
 include::../angularjs/src/app/components/app/component.js[]
 ----
 
-.App component controller: `./src/app/components/app/controller.js`
+.AppUseState component controller: `./src/app/components/app/controller.js`
 [source,js]
 ----
 include::../angularjs/src/app/components/app/controller.js[]
@@ -358,7 +358,7 @@ cd rxts/
 npm i -E rxjs
 ----
 
-.file `main.ts`:
+.file `main.tsx`:
 [source, typescript]
 ----
 include::../rxts/src/main.ts[]
@@ -468,16 +468,104 @@ npm i -E react react-dom
 }
 ----
 
+.edit file `main.tsx`:
+[source, ts]
+----
+include::../react-hooks-ts/src/main.tsx[]
+----
+
 .edit file `components/App.tsx`:
 [source, ts]
 ----
 include::../react-hooks-ts/src/components/App.tsx[]
 ----
 
+.edit file `components/UseStateApp.tsx`:
+[source, ts]
+----
+include::../react-hooks-ts/src/components/UseStateApp.tsx[]
+----
+
+.edit file `components/UseReducerApp.tsx`:
+[source, ts]
+----
+include::../react-hooks-ts/src/components/UseReducerApp.tsx[]
+----
+
+.edit file `components/UseContextStoreApp.tsx`:
+[source, ts]
+----
+include::../react-hooks-ts/src/components/UseContextStoreApp.tsx[]
+----
+
+done.
+
+=== react-hooks-typescript
+
+.install packages
+[source, bash]
+----
+npm i -ED parcel-bundler parcel-plugin-static-files-copy scss
+npm i -ED typescript @types/node
+npm i -ED babel-core babel-preset-env babel-preset-preact @babel/preset-typescript
+npm i -E preact
+----
+
+.key `package.json` features:
+[source, json]
+----
+{
+  "name": "react-hooks-ts-app",
+  "main": "./src/index.html",
+  "devDependencies": {
+    "@babel/preset-typescript": "7.9.0",
+    "@types/node": "13.9.2",
+    "@types/react": "16.9.25",
+    "@types/react-dom": "16.9.5",
+    "babel-core": "6.26.3",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "parcel-bundler": "1.12.4",
+    "parcel-plugin-static-files-copy": "2.3.1",
+    "pm2": "4.2.3",
+    "sass": "1.26.3",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "staticFiles": {
+    "staticPath": "./src/public",
+    "watcherGlob": "**"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "scripts": {
+    "dev": "parcel src/index.html --no-cache",
+    "build": "parcel build src/index.html --no-cache",
+    "start": "pm2 start 'npm run dev' --name app",
+    "restart": "pm2 restart app",
+    "stop": "pm2 kill",
+    "logs": "pm2 logs"
+  }
+}
+----
+
+.edit file `components/AppUseState.tsx`:
+[source, ts]
+----
+include::../preact-hooks-ts/src/components/AppUseState.tsx[]
+----
+
 .edit file `main.tsx`:
 [source, ts]
 ----
-include::../react-hooks-ts/src/main.tsx[]
+include::../preact-hooks-ts/src/main.tsx[]
 ----
 
 done.
