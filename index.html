@@ -467,7 +467,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2020-03-21 17:08:34 UTC</span>
+<span id="revdate">2020-03-21 20:23:32 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -568,6 +568,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p><a href="https://github.com/daggerok/parcel-react-example">GitHub: daggerok/parcel-react-example</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>links:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=dpw9EHDh2bM">YouTube: React Today and Tomorrow and 90% Cleaner React With Hooks</a></p>
 </li>
 </ul>
 </div>
@@ -1457,17 +1467,10 @@ npm i -E react react-dom</code></pre>
 <div class="title">edit file <code>components/App.tsx</code>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">import * as React from 'react';
-const { useState } = React;
 
-export function App(): JSX.Element {
-  const [message, setMessage] = useState&lt;string&gt;('Hello');
-  const reversed: (str: string) =&gt; string = (str: string) =&gt; str.split('').reverse().join('');
-  const toggleReverse = () =&gt; setMessage(reversed(message));
-
-  return &lt;h1 onClick={toggleReverse}&gt;
-    { message } 📦 ⚛️ 🚀
-  &lt;/h1&gt;
-}</code></pre>
+export const App = () =&gt; &lt;h1&gt;
+  React Hooks TypeScript Apps 📦 ⚛️ 🚀
+&lt;/h1&gt;</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1476,11 +1479,28 @@ export function App(): JSX.Element {
 <pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { App } from './components/App';
+import { StoreProvider } from './store/Store';
+import { UseStateApp } from './components/UseStateApp';
+import { UseReducerApp } from './components/UseReducerApp';
+import { UseContextStoreApp } from './components/UseContextStoreApp';
+
 const { render } = ReactDOM;
 
 render(
   &lt;React.Fragment&gt;
+    &lt;p&gt;app:&lt;/p&gt;&lt;br/&gt;
     &lt;App/&gt;
+
+    &lt;p&gt;useState app:&lt;/p&gt;&lt;br/&gt;
+    &lt;UseStateApp/&gt;
+
+    &lt;p&gt;Provider useContext app:&lt;/p&gt;&lt;br/&gt;
+    &lt;StoreProvider&gt;
+      &lt;UseContextStoreApp/&gt;
+    &lt;/StoreProvider&gt;
+
+    &lt;p&gt;useReducer app:&lt;/p&gt;&lt;br/&gt;
+    &lt;UseReducerApp /&gt;
   &lt;/React.Fragment&gt;,
   document.querySelector('#app')
 );</code></pre>
@@ -1542,7 +1562,7 @@ render(
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2020-03-21 17:08:34 UTC
+Last updated 2020-03-21 20:23:32 UTC
 </div>
 </div>
 <!-- jquery -->
