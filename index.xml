@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2020-03-21 20:42:13 UTC</date>
+<date>2020-03-21 21:51:38 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2020-03-21 20:42:13 UTC</date>
+<date>2020-03-21 21:51:38 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -120,11 +120,11 @@ npm i -D parcel-bundler</programlisting>
 <programlisting language="bash" linenumbering="unnumbered">mkdir -p src
 touch src/index.html
 touch src/styles.css
-touch src/main.js</programlisting>
+touch src/main.tsx</programlisting>
 </para>
 </formalpara>
 <formalpara>
-<title>main.js</title>
+<title>main.tsx</title>
 <para>
 <programlisting language="javascript" linenumbering="unnumbered">(function main() {
   'use strict';
@@ -263,7 +263,7 @@ export class EchoEhlo extends Component {
 </para>
 </formalpara>
 <formalpara>
-<title>and update code in <literal>src/main.js</literal> file:</title>
+<title>and update code in <literal>src/main.tsx</literal> file:</title>
 <para>
 <programlisting language="javascript" linenumbering="unnumbered">import React from 'react';
 import { render } from 'react-dom';
@@ -341,7 +341,7 @@ echo '{"presets":["env","vue"]}' &gt; .babelrc</programlisting>
 </para>
 </formalpara>
 <formalpara>
-<title>add vue component file: <literal>App.vue</literal></title>
+<title>add vue component file: <literal>AppUseState.vue</literal></title>
 <para>
 <programlisting language="html" linenumbering="unnumbered">&lt;template lang="html"&gt;
   &lt;div id="app"&gt;
@@ -377,7 +377,7 @@ echo '{"presets":["env","vue"]}' &gt; .babelrc</programlisting>
 </para>
 </formalpara>
 <formalpara>
-<title>main.js</title>
+<title>main.tsx</title>
 <para>
 <programlisting language="javascript" linenumbering="unnumbered">import Vue from 'vue'
 import App from './components/App.vue'
@@ -411,7 +411,7 @@ npm i -ES js-yaml</programlisting>
 </para>
 </formalpara>
 <formalpara>
-<title>main.js</title>
+<title>main.tsx</title>
 <para>
 <programlisting language="javascript" linenumbering="unnumbered">import app from './app.yaml';
 
@@ -481,7 +481,7 @@ function ololo(arg) {
 </para>
 </formalpara>
 <formalpara>
-<title>main.js</title>
+<title>main.tsx</title>
 <para>
 <programlisting language="javascript" linenumbering="unnumbered">import app from'./app.md';
 
@@ -516,7 +516,7 @@ markdowns2/src/posts/
 </para>
 </formalpara>
 <formalpara>
-<title><literal>main.js</literal> implementation:</title>
+<title><literal>main.tsx</literal> implementation:</title>
 <para>
 <programlisting language="javascript" linenumbering="unnumbered">import marked from 'marked';
 
@@ -564,7 +564,7 @@ Object.keys(years).map(year =&gt; {
 </para>
 </formalpara>
 <formalpara>
-<title>Main application bootstrap entrypoint: <literal>./src/main.js</literal></title>
+<title>Main application bootstrap entrypoint: <literal>./src/main.tsx</literal></title>
 <para>
 <programlisting language="js" linenumbering="unnumbered">import 'angular/angular-csp.css';
 import './styles.css';
@@ -625,7 +625,7 @@ export default componentsModule;</programlisting>
 </para>
 </formalpara>
 <formalpara>
-<title>App module config: <literal>./src/app/components/app/index.js</literal></title>
+<title>AppUseState module config: <literal>./src/app/components/app/index.js</literal></title>
 <para>
 <programlisting language="js" linenumbering="unnumbered">/**
  * App component module configuration.
@@ -646,7 +646,7 @@ export default appComponentModule;</programlisting>
 </para>
 </formalpara>
 <formalpara>
-<title>App component config: <literal>./src/app/components/app/config.js</literal></title>
+<title>AppUseState component config: <literal>./src/app/components/app/config.js</literal></title>
 <para>
 <programlisting language="js" linenumbering="unnumbered">export default ($stateProvider) =&gt; $stateProvider.state({
   url: '/',
@@ -656,7 +656,7 @@ export default appComponentModule;</programlisting>
 </para>
 </formalpara>
 <formalpara>
-<title>App component: <literal>./src/app/components/app/component.js</literal></title>
+<title>AppUseState component: <literal>./src/app/components/app/component.js</literal></title>
 <para>
 <programlisting language="js" linenumbering="unnumbered">import Controller from './controller.js';
 
@@ -675,7 +675,7 @@ export default {
 </para>
 </formalpara>
 <formalpara>
-<title>App component controller: <literal>./src/app/components/app/controller.js</literal></title>
+<title>AppUseState component controller: <literal>./src/app/components/app/controller.js</literal></title>
 <para>
 <programlisting language="js" linenumbering="unnumbered">export default class Controller {
   constructor() {
@@ -775,7 +775,7 @@ export class EchoEhlo extends Component {
 cd rxts/
 npm i -E rxjs</programlisting>
 <formalpara>
-<title>file <literal>main.ts</literal>:</title>
+<title>file <literal>main.tsx</literal>:</title>
 <para>
 <programlisting language="typescript" linenumbering="unnumbered">import { fromEvent } from 'rxjs';
 
@@ -925,16 +925,6 @@ npm i -E react react-dom</programlisting>
 </para>
 </formalpara>
 <formalpara>
-<title>edit file <literal>components/App.tsx</literal>:</title>
-<para>
-<programlisting language="ts" linenumbering="unnumbered">import * as React from 'react';
-
-export const App = () =&gt; &lt;h1&gt;
-  React Hooks TypeScript Apps 📦 ⚛️ 🚀
-&lt;/h1&gt;</programlisting>
-</para>
-</formalpara>
-<formalpara>
 <title>edit file <literal>main.tsx</literal>:</title>
 <para>
 <programlisting language="ts" linenumbering="unnumbered">import * as React from 'react';
@@ -965,6 +955,176 @@ render(
 
     &lt;p&gt;useReducer app:&lt;/p&gt;
     &lt;UseReducerApp /&gt;
+    &lt;br/&gt;
+  &lt;/React.Fragment&gt;,
+  document.querySelector('#app')
+);</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>edit file <literal>components/App.tsx</literal>:</title>
+<para>
+<programlisting language="ts" linenumbering="unnumbered">import * as React from 'react';
+
+export const App = () =&gt; &lt;h1&gt;
+  React Hooks TypeScript Apps 📦 ⚛️ 🚀
+&lt;/h1&gt;</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>edit file <literal>components/UseStateApp.tsx</literal>:</title>
+<para>
+<programlisting language="ts" linenumbering="unnumbered">import * as React from 'react';
+const { useState } = React;
+
+export function UseStateApp(): JSX.Element {
+  const [state, setState] = useState&lt;string&gt;('Store');
+  const reverse = () =&gt; setState(state.split('').reverse().join(''));
+
+  return (
+    &lt;h1 onClick={reverse}&gt;
+      state: { state } 📦 ⚛️ 🚀
+    &lt;/h1&gt;
+  );
+}</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>edit file <literal>components/UseReducerApp.tsx</literal>:</title>
+<para>
+<programlisting language="ts" linenumbering="unnumbered">import * as React from 'react';
+import { reducer } from '../store/Store';
+
+const { Fragment, useReducer } = React;
+
+export function UseReducerApp(): JSX.Element {
+  const [state, dispatch] = useReducer(reducer, { message: 'reducer app' });
+
+  return &lt;Fragment&gt;
+    {console.log('reducer:', state)}
+    &lt;h1 onClick={() =&gt; {
+      dispatch({ type: 'SET', payload: state.message });
+    }}&gt;
+      { state.message } 📦 ⚛️ 🚀
+    &lt;/h1&gt;
+  &lt;/Fragment&gt;
+}</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>edit file <literal>components/UseContextStoreApp.tsx</literal>:</title>
+<para>
+<programlisting language="ts" linenumbering="unnumbered">import * as React from 'react';
+import { Store, reducer } from '../store/Store';
+
+const { Fragment, useContext, useReducer } = React;
+
+export function UseContextStoreApp(): JSX.Element {
+  const store = useContext(Store); // see main.tsx =&gt; StoreProvider
+  const [state, dispatch] = useReducer(reducer, store);
+
+  return &lt;Fragment&gt;
+    {console.log('store:', store, 'state:', state)}
+    &lt;h1 onClick={() =&gt; {
+      dispatch({ type: 'SET', payload: state.message });
+    }}&gt;
+      { store.message } 📦 ⚛️ 🚀 { state.message }
+    &lt;/h1&gt;
+  &lt;/Fragment&gt;
+}</programlisting>
+</para>
+</formalpara>
+<simpara>done.</simpara>
+</section>
+<section xml:id="react-hooks-typescript-2">
+<title>react-hooks-typescript</title>
+<formalpara>
+<title>install packages</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">npm i -ED parcel-bundler parcel-plugin-static-files-copy scss
+npm i -ED typescript @types/node
+npm i -ED babel-core babel-preset-env babel-preset-preact @babel/preset-typescript
+npm i -E preact</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>key <literal>package.json</literal> features:</title>
+<para>
+<programlisting language="json" linenumbering="unnumbered">{
+  "name": "react-hooks-ts-app",
+  "main": "./src/index.html",
+  "devDependencies": {
+    "@babel/preset-typescript": "7.9.0",
+    "@types/node": "13.9.2",
+    "@types/react": "16.9.25",
+    "@types/react-dom": "16.9.5",
+    "babel-core": "6.26.3",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "parcel-bundler": "1.12.4",
+    "parcel-plugin-static-files-copy": "2.3.1",
+    "pm2": "4.2.3",
+    "sass": "1.26.3",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "staticFiles": {
+    "staticPath": "./src/public",
+    "watcherGlob": "**"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "scripts": {
+    "dev": "parcel src/index.html --no-cache",
+    "build": "parcel build src/index.html --no-cache",
+    "start": "pm2 start 'npm run dev' --name app",
+    "restart": "pm2 restart app",
+    "stop": "pm2 kill",
+    "logs": "pm2 logs"
+  }
+}</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>edit file <literal>components/AppUseState.tsx</literal>:</title>
+<para>
+<programlisting language="ts" linenumbering="unnumbered">import { useState } from 'preact/hooks';
+import * as React from 'preact/compat';
+import { JSXInternal } from 'preact/src/jsx';
+
+type Element = JSXInternal.Element;
+
+export function AppUseState(): Element {
+  const [message, setMessage] = useState('Hello');
+  const reversed = (str: string) =&gt; str.split('').reverse().join('');
+  const toggleReverse = () =&gt; setMessage(reversed(message));
+
+  return &lt;h1 onClick={toggleReverse}&gt;
+    { message } 📦 🚀
+  &lt;/h1&gt;
+}</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>edit file <literal>main.tsx</literal>:</title>
+<para>
+<programlisting language="ts" linenumbering="unnumbered">import * as Preact from 'preact';
+import * as React from 'preact/compat';
+import { AppUseState } from './components/AppUseState';
+
+const { h, render } = Preact;
+
+render(
+  &lt;React.Fragment&gt;
+    &lt;p&gt;useState:&lt;/p&gt;
+    &lt;AppUseState/&gt;
     &lt;br/&gt;
   &lt;/React.Fragment&gt;,
   document.querySelector('#app')

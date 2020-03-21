@@ -467,7 +467,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2020-03-21 20:42:13 UTC</span>
+<span id="revdate">2020-03-21 21:51:38 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -491,6 +491,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#react-hooks">2.14. react-hooks</a></li>
 <li><a href="#preact-hooks">2.15. preact-hooks</a></li>
 <li><a href="#react-hooks-typescript">2.16. react-hooks-typescript</a></li>
+<li><a href="#react-hooks-typescript-2">2.17. react-hooks-typescript</a></li>
 </ul>
 </li>
 <li><a href="#links">3. Links</a></li>
@@ -612,11 +613,11 @@ npm i -D parcel-bundler</code></pre>
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir -p src
 touch src/index.html
 touch src/styles.css
-touch src/main.js</code></pre>
+touch src/main.tsx</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">main.js</div>
+<div class="title">main.tsx</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">(function main() {
   'use strict';
@@ -763,7 +764,7 @@ export class EchoEhlo extends Component {
 </div>
 </div>
 <div class="listingblock">
-<div class="title">and update code in <code>src/main.js</code> file:</div>
+<div class="title">and update code in <code>src/main.tsx</code> file:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">import React from 'react';
 import { render } from 'react-dom';
@@ -847,7 +848,7 @@ echo '{"presets":["env","vue"]}' &gt; .babelrc</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">add vue component file: <code>App.vue</code></div>
+<div class="title">add vue component file: <code>AppUseState.vue</code></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;template lang="html"&gt;
   &lt;div id="app"&gt;
@@ -883,7 +884,7 @@ echo '{"presets":["env","vue"]}' &gt; .babelrc</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">main.js</div>
+<div class="title">main.tsx</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">import Vue from 'vue'
 import App from './components/App.vue'
@@ -917,7 +918,7 @@ npm i -ES js-yaml</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">main.js</div>
+<div class="title">main.tsx</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">import app from './app.yaml';
 
@@ -987,7 +988,7 @@ function ololo(arg) {
 </div>
 </div>
 <div class="listingblock">
-<div class="title">main.js</div>
+<div class="title">main.tsx</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">import app from'./app.md';
 
@@ -1033,7 +1034,7 @@ markdowns2/src/posts/
 </div>
 </div>
 <div class="listingblock">
-<div class="title"><code>main.js</code> implementation:</div>
+<div class="title"><code>main.tsx</code> implementation:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">import marked from 'marked';
 
@@ -1083,7 +1084,7 @@ Object.keys(years).map(year =&gt; {
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Main application bootstrap entrypoint: <code>./src/main.js</code></div>
+<div class="title">Main application bootstrap entrypoint: <code>./src/main.tsx</code></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">import 'angular/angular-csp.css';
 import './styles.css';
@@ -1144,7 +1145,7 @@ export default componentsModule;</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">App module config: <code>./src/app/components/app/index.js</code></div>
+<div class="title">AppUseState module config: <code>./src/app/components/app/index.js</code></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">/**
  * App component module configuration.
@@ -1165,7 +1166,7 @@ export default appComponentModule;</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">App component config: <code>./src/app/components/app/config.js</code></div>
+<div class="title">AppUseState component config: <code>./src/app/components/app/config.js</code></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">export default ($stateProvider) =&gt; $stateProvider.state({
   url: '/',
@@ -1175,7 +1176,7 @@ export default appComponentModule;</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">App component: <code>./src/app/components/app/component.js</code></div>
+<div class="title">AppUseState component: <code>./src/app/components/app/component.js</code></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">import Controller from './controller.js';
 
@@ -1194,7 +1195,7 @@ export default {
 </div>
 </div>
 <div class="listingblock">
-<div class="title">App component controller: <code>./src/app/components/app/controller.js</code></div>
+<div class="title">AppUseState component controller: <code>./src/app/components/app/controller.js</code></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">export default class Controller {
   constructor() {
@@ -1302,7 +1303,7 @@ npm i -E rxjs</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">file <code>main.ts</code>:</div>
+<div class="title">file <code>main.tsx</code>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { fromEvent } from 'rxjs';
 
@@ -1464,16 +1465,6 @@ npm i -E react react-dom</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">edit file <code>components/App.tsx</code>:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">import * as React from 'react';
-
-export const App = () =&gt; &lt;h1&gt;
-  React Hooks TypeScript Apps 📦 ⚛️ 🚀
-&lt;/h1&gt;</code></pre>
-</div>
-</div>
-<div class="listingblock">
 <div class="title">edit file <code>main.tsx</code>:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">import * as React from 'react';
@@ -1504,6 +1495,178 @@ render(
 
     &lt;p&gt;useReducer app:&lt;/p&gt;
     &lt;UseReducerApp /&gt;
+    &lt;br/&gt;
+  &lt;/React.Fragment&gt;,
+  document.querySelector('#app')
+);</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">edit file <code>components/App.tsx</code>:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">import * as React from 'react';
+
+export const App = () =&gt; &lt;h1&gt;
+  React Hooks TypeScript Apps 📦 ⚛️ 🚀
+&lt;/h1&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">edit file <code>components/UseStateApp.tsx</code>:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">import * as React from 'react';
+const { useState } = React;
+
+export function UseStateApp(): JSX.Element {
+  const [state, setState] = useState&lt;string&gt;('Store');
+  const reverse = () =&gt; setState(state.split('').reverse().join(''));
+
+  return (
+    &lt;h1 onClick={reverse}&gt;
+      state: { state } 📦 ⚛️ 🚀
+    &lt;/h1&gt;
+  );
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">edit file <code>components/UseReducerApp.tsx</code>:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">import * as React from 'react';
+import { reducer } from '../store/Store';
+
+const { Fragment, useReducer } = React;
+
+export function UseReducerApp(): JSX.Element {
+  const [state, dispatch] = useReducer(reducer, { message: 'reducer app' });
+
+  return &lt;Fragment&gt;
+    {console.log('reducer:', state)}
+    &lt;h1 onClick={() =&gt; {
+      dispatch({ type: 'SET', payload: state.message });
+    }}&gt;
+      { state.message } 📦 ⚛️ 🚀
+    &lt;/h1&gt;
+  &lt;/Fragment&gt;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">edit file <code>components/UseContextStoreApp.tsx</code>:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">import * as React from 'react';
+import { Store, reducer } from '../store/Store';
+
+const { Fragment, useContext, useReducer } = React;
+
+export function UseContextStoreApp(): JSX.Element {
+  const store = useContext(Store); // see main.tsx =&gt; StoreProvider
+  const [state, dispatch] = useReducer(reducer, store);
+
+  return &lt;Fragment&gt;
+    {console.log('store:', store, 'state:', state)}
+    &lt;h1 onClick={() =&gt; {
+      dispatch({ type: 'SET', payload: state.message });
+    }}&gt;
+      { store.message } 📦 ⚛️ 🚀 { state.message }
+    &lt;/h1&gt;
+  &lt;/Fragment&gt;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>done.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="react-hooks-typescript-2"><a class="anchor" href="#react-hooks-typescript-2"></a>2.17. react-hooks-typescript</h3>
+<div class="listingblock">
+<div class="title">install packages</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm i -ED parcel-bundler parcel-plugin-static-files-copy scss
+npm i -ED typescript @types/node
+npm i -ED babel-core babel-preset-env babel-preset-preact @babel/preset-typescript
+npm i -E preact</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">key <code>package.json</code> features:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name": "react-hooks-ts-app",
+  "main": "./src/index.html",
+  "devDependencies": {
+    "@babel/preset-typescript": "7.9.0",
+    "@types/node": "13.9.2",
+    "@types/react": "16.9.25",
+    "@types/react-dom": "16.9.5",
+    "babel-core": "6.26.3",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "parcel-bundler": "1.12.4",
+    "parcel-plugin-static-files-copy": "2.3.1",
+    "pm2": "4.2.3",
+    "sass": "1.26.3",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "staticFiles": {
+    "staticPath": "./src/public",
+    "watcherGlob": "**"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "scripts": {
+    "dev": "parcel src/index.html --no-cache",
+    "build": "parcel build src/index.html --no-cache",
+    "start": "pm2 start 'npm run dev' --name app",
+    "restart": "pm2 restart app",
+    "stop": "pm2 kill",
+    "logs": "pm2 logs"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">edit file <code>components/AppUseState.tsx</code>:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">import { useState } from 'preact/hooks';
+import * as React from 'preact/compat';
+import { JSXInternal } from 'preact/src/jsx';
+
+type Element = JSXInternal.Element;
+
+export function AppUseState(): Element {
+  const [message, setMessage] = useState('Hello');
+  const reversed = (str: string) =&gt; str.split('').reverse().join('');
+  const toggleReverse = () =&gt; setMessage(reversed(message));
+
+  return &lt;h1 onClick={toggleReverse}&gt;
+    { message } 📦 🚀
+  &lt;/h1&gt;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">edit file <code>main.tsx</code>:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">import * as Preact from 'preact';
+import * as React from 'preact/compat';
+import { AppUseState } from './components/AppUseState';
+
+const { h, render } = Preact;
+
+render(
+  &lt;React.Fragment&gt;
+    &lt;p&gt;useState:&lt;/p&gt;
+    &lt;AppUseState/&gt;
     &lt;br/&gt;
   &lt;/React.Fragment&gt;,
   document.querySelector('#app')
@@ -1566,7 +1729,7 @@ render(
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2020-03-21 20:42:13 UTC
+Last updated 2020-03-21 21:51:38 UTC
 </div>
 </div>
 <!-- jquery -->
