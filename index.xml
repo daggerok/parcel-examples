@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>parcel-examples (0.0.1)</title>
-<date>2020-03-23 00:37:35 UTC</date>
+<date>2020-03-23 01:20:13 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2020-03-23 00:37:35 UTC</date>
+<date>2020-03-23 01:20:13 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -1039,8 +1039,8 @@ export function UseContextStoreApp(): JSX.Element {
 </formalpara>
 <simpara>done.</simpara>
 </section>
-<section xml:id="react-hooks-typescript-2">
-<title>react-hooks-typescript</title>
+<section xml:id="preact-hooks-typescript">
+<title>preact-hooks-typescript</title>
 <formalpara>
 <title>install packages</title>
 <para>
