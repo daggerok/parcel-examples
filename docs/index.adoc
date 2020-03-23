@@ -500,7 +500,7 @@ include::../react-hooks-ts/src/components/UseContextStoreApp.tsx[]
 
 done.
 
-=== react-hooks-typescript
+=== preact-hooks-typescript
 
 .install packages
 [source, bash]
