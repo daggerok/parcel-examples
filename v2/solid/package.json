@@ -1,0 +1,35 @@
+{
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel --no-cache --no-source-maps",
+    "build": "parcel build --no-cache --no-source-maps",
+    "start": "pm2 start 'npm run dev' --name app",
+    "restart": "pm2 restart app",
+    "stop": "pm2 kill",
+    "logs": "pm2 logs"
+  },
+  "name": "solid-app",
+  "version": "1.0.0",
+  "keywords": [
+    "pm2",
+    "solid",
+    "parcel"
+  ],
+  "author": "Maksim Kostromin <daggerok@gmail.com> (https://github.com/daggerok)",
+  "license": "MIT",
+  "description": "Parcel v2 Solid App",
+  "devDependencies": {
+    "@babel/core": "7.17.10",
+    "@parcel/resolver-glob": "2.5.0",
+    "@parcel/transformer-sass": "2.5.0",
+    "@types/node": "17.0.33",
+    "babel-preset-solid": "1.4.0",
+    "parcel": "2.5.0",
+    "pm2": "5.2.0",
+    "sass": "1.51.0",
+    "solid-refresh": "0.4.0"
+  },
+  "dependencies": {
+    "solid-js": "1.4.1"
+  }
+}
