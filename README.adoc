@@ -2,6 +2,7 @@
 
 //tag::content[]
 
+- solidjs
 - typescript
 - plain javascript
 - es next using babel
