@@ -1,34 +1,8 @@
 name: Parcel 2.x
-on:
-  push:
-  workflow_dispatch:
-    inputs:
-      trigger:
-        description: Type m to triggre manual jobs
-        required: false
-        default: ''
+on: [push]
 env:
   NODE_VERSION: 18.4.0
 jobs:
-  v2-npm-check-updates:
-    if: startsWith(github.event.inputs.trigger, 'm')
-      || startsWith(github.event.inputs.trigger, 'M')
-    name: npm-check-updates
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-      - uses: actions/cache@v3
-        with:
-          path: |
-            ~/.m2
-            ~/.npm
-            ~/.docker
-            ~/.gradle
-          key: ${{ runner.os }}-build-${{ hashFiles('**/package.json', '**/pom.xml') }}
-      - run: cd $GITHUB_WORKSPACE/v2/solid            && npm_config_yes=true npx npm-check-updates
-      - run: cd $GITHUB_WORKSPACE/v2/posthtml-include && npm_config_yes=true npx npm-check-updates
   v2-posthtml-include:
     name: posthtml-include
     runs-on: ubuntu-latest
