@@ -1,36 +1,6 @@
-name: GitHub actions workflows
+name: Parcel 1.x
 on: [push]
 jobs:
-  v2-solid:
-    strategy:
-      matrix:
-        java: [11]
-        os: [ubuntu-latest]
-        nodejs-version: [18]
-    name: parcel-v2-solid with nodejs ${{ matrix.nodejs-version }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    steps:
-      - uses: actions/checkout@v1
-      - run: sudo apt-get install -y curl httpie
-      - uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.nodejs-version }}
-      - uses: actions/cache@v3
-        with:
-          path: |
-            ~/.m2
-            ~/.npm
-            ~/.docker
-            ~/.gradle
-          key: ${{ runner.os }}-build-${{ hashFiles('**/package.json', '**/pom.xml') }}
-      - run: npm install -g wait-port
-      - run: cd $GITHUB_WORKSPACE/v2/solid && npm i -E
-      - run: cd $GITHUB_WORKSPACE/v2/solid && npm run build
-      - run: cd $GITHUB_WORKSPACE/v2/solid && npm start
-      - run: cd $GITHUB_WORKSPACE/v2/solid && npm run logs &
-      - run: wait-port 1234
-      - run: curl 127.0.0.1:1234
-      - run: cd $GITHUB_WORKSPACE/v2/solid && npm stop
   preact-hooks-ts:
     strategy:
       matrix:

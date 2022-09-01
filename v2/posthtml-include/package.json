@@ -1,0 +1,41 @@
+{
+  "name": "posthtml-include",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "clean": "rimraf -rf dist",
+    "prebuild": "npm run clean",
+    "dev": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html --no-cache",
+    "github-pages": "npm run build -- --public-url=/parcel-examples/",
+    "start": "pm2 start 'npm run dev' --name app",
+    "stop": "pm2 kill",
+    "logs": "pm2 logs"
+  },
+  "keywords": [
+    "parcel",
+    "parcel2",
+    "posthtml-include"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "2.7.0",
+    "pm2": "5.2.0",
+    "posthtml-doctype": "^1.1.1",
+    "posthtml-include": "1.7.4",
+    "rimraf": "3.0.2"
+  },
+  "posthtml": {
+    "plugins": {
+      "posthtml-include": {
+        "root": "./src"
+      },
+      "posthtml-doctype": {
+        "doctype": "HTML 5"
+      }
+    }
+  }
+}
