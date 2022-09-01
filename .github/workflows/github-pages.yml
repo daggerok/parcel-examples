@@ -4,7 +4,7 @@ on:
   # Go to Setting => Environments => Deployment branches: select All branches
   push:
     tags: [ '*' ]
-    branches: [ 'master' ]
+    branches: [ '*' ]
 env:
   NODE_VERSION: 18.4.0
   JAVA_VERSION: 8
@@ -16,33 +16,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 jobs:
-#  github-pages-build: # mvn
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v3
-#      - name: Setup Pages
-#        uses: actions/configure-pages@v1
-#      - uses: actions/cache@v3
-#        id: ci
-#        with:
-#          path: |
-#            ~/.m2
-#            ~/.npm
-#            ~/.node
-#            ~/.docker
-#            ~/.gradle
-#            !~/.m2/repository/io/gituhb/daggerok
-#          key: ${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/pom.xml', '**/package.json', '**/package-lock.json') }}
-#      - uses: actions/setup-java@v3
-#        with:
-#          # 'temurin' 'zulu' 'adopt' 'adopt-hotspot' 'adopt-openj9' 'liberica' 'microsoft'
-#          distribution: 'temurin'
-#          java-version: ${{ env.JAVA_VERSION }}
-#      - run: cd $GITHUB_WORKSPACE && ./mvnw -Pdocs
-#      - name: Upload artifact
-#        uses: actions/upload-pages-artifact@v1
-#        with:
-#          path: target/generated-docs
   github-pages-build: # npm
     runs-on: ubuntu-latest
     steps:
@@ -63,12 +36,22 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - run: npm --prefix v2/posthtml-include install -E
-      - run: npm --prefix v2/posthtml-include run github-pages
+      - uses: actions/setup-java@v3
+        with:
+          # 'temurin' 'zulu' 'adopt' 'adopt-hotspot' 'adopt-openj9' 'liberica' 'microsoft'
+          distribution: 'temurin'
+          java-version: ${{ env.JAVA_VERSION }}
+      #- run: npm --prefix v2/posthtml-include install -E
+      #- run: npm --prefix v2/posthtml-include run github-pages
+      #- name: Upload artifact
+      #  uses: actions/upload-pages-artifact@v1
+      #  with:
+      #    path: v2/posthtml-include/dist
+      - run: cd $GITHUB_WORKSPACE && ./mvnw -Pdocs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: v2/posthtml-include/dist
+          path: target/generated-docs
   github-pages-deploy:
     environment:
       name: github-pages
