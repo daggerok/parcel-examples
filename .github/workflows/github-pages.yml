@@ -16,7 +16,7 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 jobs:
-  github-pages-build: # npm
+  github-pages-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -41,12 +41,14 @@ jobs:
           # 'temurin' 'zulu' 'adopt' 'adopt-hotspot' 'adopt-openj9' 'liberica' 'microsoft'
           distribution: 'temurin'
           java-version: ${{ env.JAVA_VERSION }}
+      ## npm:
       #- run: npm --prefix v2/posthtml-include install -E
       #- run: npm --prefix v2/posthtml-include run github-pages
       #- name: Upload artifact
       #  uses: actions/upload-pages-artifact@v1
       #  with:
       #    path: v2/posthtml-include/dist
+      # mvn:
       - run: cd $GITHUB_WORKSPACE && ./mvnw -Pdocs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
